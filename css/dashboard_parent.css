@@ -1,16 +1,30 @@
+:root {
+    --blue-color: #1955CC;
+    --orange-color: #FD7D00;
+    --black-color: #2c2c2c;
+}
+.students-container-parent{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .students-container {
     display: flex;
     border-image-width: 100%;
     align-items: center;
     padding-top: 20px;
+    flex-wrap: wrap;
 }
 
 .student-block {
-    width: 150px;
+    width:  auto;
+    font-size: 12px;
+    margin-right: 20px;
 }
 
 .student-block.Active {
-    min-width: 230px;
+    width: auto;
+    font-size: 14px;
 }
 
 .student-block .studentage {
@@ -53,7 +67,7 @@
 }
 
 .student-block.Active img {
-    width: 100px;
+    width: 140px;
 }
 
 .students-container .View-more {
@@ -72,6 +86,7 @@
     z-index: 999;
     margin-top: -20px;
     margin-left: 20px;
+    
 }
 
 .students_list .student_item {
@@ -94,10 +109,6 @@
     cursor: pointer;
 }
 
-.content-container {
-    padding-right: 100px;
-    padding-left: 10px;
-}
 
 .student-info {
     padding: 15px;
@@ -118,8 +129,220 @@
     font-size: 14px;
 }
 
-.package-container .Package-headding {
+.headding {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: var(--black-color);
+}
+.session-container {
+    padding: 20px;
+}
+.progress-headers{
+    padding: 0 100px;
+}
+.package-progress-container .befbar{
+display: flex;
+justify-content: space-between;
+}
+.package-container .progressbar-container{
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.progressbar-container .progressbar{
+    background-color: var(--orange-color);
+    height: 20px;
+    border-radius: 20px;
+  
+}
+.slice-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--black-color);
+    margin-bottom: 50px;
+}
+.slice-container .comp_container.right{
+    width: 53%;
+}
+.slice-container .comp_container.left{
+    width: 45%;
+}
+.session-container .countdown{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.countdown .comp_container{
+    margin: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+   
+}
+.countdown .comp_container h5{
+    font-size: 13px ;
+    line-height: 10px;
+    margin-bottom: 20px;
+}
+.countdown .comp_container h1{
+    font-size: 30px;
+    line-height: 10px;
+    margin-top: 30px;
+}
+.Statics{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Stats_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.Stats_container h5{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: -10px;
+    margin-top: 20px;
+    line-height: -10px;
+}
+.Stats_container h1{
+    font-size: 25px;
+    color: var(--black-color);
+}
+.Stats_container .comp_container{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+    
+.slice-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--black-color);
+    flex-direction: column;
+}
+.slice-container .comp_container.left,
+.slice-container .comp_container.right {
+    width: 100%;
+}
+.countdown{
+    justify-content: center;
+}
+.countdown .comp_container{
+    width:100px;
+    margin-bottom: 20px
+}
+.session-container .Statics, 
+.session-container .countdown {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Stats_container .comp_container{
+    text-align: center;
+    width: 100px;
+}
+}
+
+@media screen and (max-width:570px) {
+ .pages-navigation button a{
+display: none;
+ }
+ .pages-navigation button{
+     margin-right: 30px;
+ }
+    .students-container-parent {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.students-container {
+    display: flex;
+    border-image-width: 100%;
+    align-items: center;
+    padding-top: 20px;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+}
+.View-more .fa-chevron-right {
+    cursor: pointer;
+    transform: rotate(90deg);
+    margin-left: 117px;
+    margin-top: -75px;
+    position: absolute;
+    z-index: 1000;
+}
+.students_list {
+    display: block;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #00000012;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 999;
+    margin-top: -70px;
+    margin-left: -90px;
+}
+.student-info span {
+    font-size: 14px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+.progress-headers {
+    padding: 0;
+}
+.slice-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--black-color);
+    flex-direction: column;
+}
+.slice-container .comp_container.left,
+.slice-container .comp_container.right {
+    width: 100%;
+}
+.countdown{
+    justify-content: center;
+}
+.countdown .comp_container{
+    width:100px;
+    margin-bottom: 20px
+}
+.session-container .Statics, 
+.session-container .countdown {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Stats_container .comp_container{
+    text-align: center;
+    width: 100px;
+}
+
 }

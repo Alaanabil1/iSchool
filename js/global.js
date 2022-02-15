@@ -1,6 +1,6 @@
 let accOpend = false;
 let notiOpend = false;
-
+$(".popup").hide();
 function resetDropdowns() {
     notiOpend = false;
     accOpend = false;
@@ -26,7 +26,7 @@ $(".close-noti").click(function() {
 })
 
 $(".fa-bell").click(function() {
-        if (window.innerWidth >= 550) {
+        if (window.innerWidth >= 570) {
             if (notiOpend === false) {
                 resetDropdowns()
                 $(".notification-container").slideDown("fast");
@@ -34,7 +34,6 @@ $(".fa-bell").click(function() {
             } else {
                 $(".notification-container").slideUp("fast");
                 notiOpend = false;
-
             }
         } else {
             if (notiOpend === false) {
@@ -47,7 +46,6 @@ $(".fa-bell").click(function() {
                 $(".blackoverlay").hide()
                 $(".notification-container").hide();
                 notiOpend = false;
-
             }
         }
     })
@@ -74,7 +72,7 @@ let chatList = [
         ["instructorIssue 01", "instructorIssue 02", "instructorIssue 03", "instructorIssue 04", "instructorIssue 05"],
         [1, 2, 3, 4, 5]
     ]
-    // this function dectect which page are you in and add points in pagination
+// this function dectect which page are you in and add points in pagination
 function refresh() {
     if ($(".chat-body").attr("data-detect") === "1") {
         $(".back-icon").hide();

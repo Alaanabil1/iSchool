@@ -4,9 +4,21 @@
     --black-color: #2c2c2c;
 }
 
+.popup{
+    background-color: #2c2c2c80;
+    backdrop-filter: blur(10px);
+    z-index: 99999999;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
 * {
     font-family: 'roboto';
     font-weight: 400;
+}
+body{
+    overflow-y: auto;
 }
 
 hr {
@@ -49,10 +61,7 @@ hr {
     transition: 300ms;
 }
 
-.chat-header .leftside .back-icon:hover,
-.chat-header .close:hover {
-    opacity: 1;
-}
+
 
 .chat-header {
     font-size: 13px;
@@ -83,10 +92,7 @@ hr {
     transition: 300ms;
 }
 
-.chat-body .chat-choices-items:hover {
-    background-color: var(--blue-color);
-    color: white;
-}
+
 
 .chat-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -350,7 +356,7 @@ hr {
     display: block;
 }
 
-.left-navigation .nav-conatainer li:hover,
+
 .left-navigation .nav-conatainer li.active {
     background-color: var(--blue-color);
     color: white;
@@ -484,11 +490,7 @@ hr {
     transition: 300ms;
 }
 
-.notification-container .notification-item:hover {
-    background-color: var(--blue-color);
-    color: white;
-    padding: 10px;
-}
+
 
 .notification-container .notification-item .noti_list_icon {
     opacity: 0.5;
@@ -527,6 +529,11 @@ hr {
 .pages-navigation {
     display: flex;
     margin-top: 30px;
+    align-items: center;
+}
+.addstudent{
+    display: block;
+    margin-left: auto;
 }
 
 .pages-navigation .pages-link {
@@ -537,7 +544,7 @@ hr {
     transition: 300ms;
 }
 
-.pages-navigation .pages-link:hover,
+
 .pages-navigation .pages-link.active {
     color: var(--blue-color);
     opacity: 1;
@@ -610,10 +617,7 @@ hr {
     border-radius: 5px;
 }
 
-.button-48:hover:before {
-    animation: opacityFallbackIn 0s step-start forwards;
-    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
-}
+
 
 .button-48:after {
     background-color: #FFFFFF;
@@ -636,9 +640,7 @@ hr {
     transition: 300ms;
 }
 
-.messanger:hover {
-    color: var(--orange-color);
-}
+
 
 .account-info-container {
     position: absolute;
@@ -682,9 +684,7 @@ hr {
     transition: 300ms;
 }
 
-.account-info-item:hover {
-    opacity: 1;
-}
+
 
 .comp_container {
     width: 100%;
@@ -692,6 +692,15 @@ hr {
     box-shadow: 0px 0px 10px 0px #00000012;
     border-radius: 20px;
     margin-bottom: 20px;
+}
+.container-l{
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.content-container {
+    padding-right: 100px;
+    padding-left: 10px;
 }
 
 @media screen and (max-width:1050px) {
@@ -740,7 +749,14 @@ hr {
     }
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:570px) {
+    .logo_mob {
+        width: 100px;
+        height: 35px;
+        background-image: url(/img/blue-logo.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
     .messanger {
         position: fixed;
         z-index: 1000;
@@ -751,18 +767,23 @@ hr {
     }
     .layout {
         flex-direction: column-reverse;
-        height: 100vh;
+        height: auto;
     }
     .left-navigation {
         width: 100%;
         height: 50px;
-        position: absolute;
+        position: fixed;
         bottom: 0;
+        
     }
     .left-navigation .fixed-nav-position {
         width: 100%;
         height: 50px;
         padding: 0;
+        justify-content: center;
+        display: flex;
+        position: fixed;
+        bottom: 0;
     }
     .left-navigation hr {
         display: none;
@@ -860,4 +881,48 @@ hr {
         font-size: 20px;
         top: 20px;
     }
+    .pages-navigation {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    .content-container {
+        padding-right: 25px;
+        padding-left: 0;
+    }
+   
+}
+@media (hover: hover) and (pointer: fine) {
+    .account-info-item:hover {
+        opacity: 1;
+    }
+    .messanger:hover {
+        color: var(--orange-color);
+    }
+    .button-48:hover:before {
+        animation: opacityFallbackIn 0s step-start forwards;
+        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+    }
+    .pages-navigation .pages-link:hover {
+    color: var(--blue-color);
+    opacity: 1;
+    position: relative;
+}
+.notification-container .notification-item:hover {
+    background-color: var(--blue-color);
+    color: white;
+    padding: 10px;
+}
+.left-navigation .nav-conatainer li:hover {
+    background-color: var(--blue-color);
+    color: white;
+}
+.chat-body .chat-choices-items:hover {
+    background-color: var(--blue-color);
+    color: white;
+}
+.chat-header .leftside .back-icon:hover,
+.chat-header .close:hover {
+    opacity: 1;
+}
 }

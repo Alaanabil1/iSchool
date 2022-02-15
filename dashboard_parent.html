@@ -14,10 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;700;900&family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
-    <title>Comps</title>
+    <title>Parent Dashboard</title>
 </head>
 
 <body>
+    <div class="popup"></div>
     <div class="container-fluid reset-margin">
         <div class="blackoverlay"><i class="fa-solid fa-xmark close-noti"></i></div>
         <div class="messanger" title="Contact Us"><i class="fa-brands fa-facebook-messenger"></i></div>
@@ -134,46 +135,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="row students-container">
-                    <span class="student-block Active">
-                        <div class="row">
-                            <div class="col-auto student-img"><img src="img/img.jpg" alt=""></div>
-                            <div class="col">
-                                <div class="studentname">Student Name</div>
-                                <div class="studentage">8 years old</div>
-                            </div>
-                        </div>
-                    </span>
-                    <span class="student-block">
-                        <div class="row">
-                            <div class="col-auto student-img"><img src="img/img.jpg" alt=""></div>
-                            <div class="col">
-                                <div class="studentname">Student Name</div>
-                                <div class="studentage">8 years old</div>
-                            </div>
-                        </div>
-                        
-                    </span>
-                    <span class="student-block">
-                        <div class="row">
-                            <div class="col-auto student-img"><img src="img/img.jpg" alt=""></div>
-                            <div class="col">
-                                <div class="studentname">Student Name</div>
-                                <div class="studentage">8 years old</div>
-                            </div>
-                        </div>
-                        
-                    </span>
-                    <span class="View-more">
-                        <i class="fa-solid fa-chevron-right"></i>
-                        <ul class="students_list">
-                            <li class="student_item">Student 01</li>
-                            <li class="student_item">Student 01</li>
-                            <li class="student_item">Student 01</li>
-                            <li class="student_item">Student 01</li>
-                            <li class="student_item">Student 01</li>
-                            <li class="student_item">Student 01</li>
-                        </ul>
+                <div class="row students-container-parent">
+                   <div class="students-container col-auto">
+                  
+                </div>
+                <span class="View-more col-auto">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <!-- Students List  -->
+                    <ul class="students_list">
+                        <li class="student_item" data-age="8" data-img="img/01.jpg">Alaa Nabil Mostafa</li>
+                        <li class="student_item" data-age="10" data-img="img/02.jpg">Abdulrahman Mohamed Sayed</li>
+                        <li class="student_item" data-age="12" data-img="img/03.jpg">Ali Ahmed Mohamed</li>
+                        <li class="student_item" data-age="11" data-img="img/04.jpg">Hussien ibrahim metwaly</li>
+                        <li class="student_item" data-age="6" data-img="img/05.jpg">Sayed mohamed ahmed</li>
+                        <li class="student_item" data-age="7" data-img="img/06.jpg">yasser mohamed ali</li>
+                    </ul>
                     </span>
 
                 </div>
@@ -182,33 +158,103 @@
                         <li class="pages-link active">Overview</li>
                         <li class="pages-link">Sessions</li>
                         <li class="pages-link">Schedule</li>
+                        <button style="font-size: 12px;" class="btn btn-primary addstudent"><i class="fa-solid fa-plus"></i> <a>Add Student</a></button>
                     </ul>
+                    
                     <hr>
                 </div>
-                <div class="row content-container">
-                    <div class="row comp_container">
+                <div class=".col-sm- content-container">
+                    <div class=" comp_container">
                         <div class="student-info">
                             <span><a>Student ID :</a> D1001</span>
                             <span><a>Group ID :</a> B-Fo-630</span>
                             <span><a>Age :</a> 5 Years old</span>
                         </div>
                     </div>
-                    <div class="row comp_container">
+                    <div class="comp_container">
                         <div class="package-container">
-                            <div class="Package-headding">
+                            <div class="headding">
                                 Package Information
                             </div>
                             <div class="package-progress-container">
                                 <div class="progress-headers">
-                                    <div class="ava"><a>Available Quota :</a> 42 Sessions</div>
-                                    <div class="used"><a>Used Quota :</a> 20 Sessions </div>
+                                    <div class="befbar">
+                                         <div class="ava"><a>Available Quota :</a> 42 Sessions</div>
+                                         <div class="used"><a>Used Quota :</a> 20 Sessions </div>
+                                     </div>
                                     <div class="progressbar-container">
-                                        <div class="progressbar"></div>
+                                        <div style="width:25%;" class="progressbar"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="slice-container">
+                    <div  class="comp_container left ">
+                        <div class="upgradenow"></div>
+                        <div class="session-container">
+                            <div class="headding">
+                                Next Session Date & Time
+                            </div>
+                            <div class="countdown">
+                                <div class="comp_container">
+                                    <h1>01</h1>
+                                    <h5>Days</h5>
+                                </div>
+                                <div class="comp_container">
+                                    <h1>01</h1>
+                                    <h5>Hours</h5>
+                                </div>
+                                <div class="comp_container">
+                                    <h1>01</h1>
+                                    <h5>Minutes</h5>
+                                </div>
+                                <div class="comp_container">
+                                    <h1>01</h1>
+                                    <h5>Secounds</h5>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="comp_container right">
+                        <div class="session-container">
+                            <div class="headding">
+                                Student Statistics
+                            </div>
+                            <div class="Statics">
+                               
+                                <div class="Stats_container">
+                                    <h5>Attendance</h5>
+                                    <h1 class="comp_container" >45/50</h1>
+                                </div>
+                                <div class="Stats_container">
+                                    <h5>Tasks</h5>
+                                    <h1 class="comp_container">45/50</h1>
+                                    
+                                </div>
+                                <div class="Stats_container">
+                                    <h5>Session Score</h5>
+                                    <h1 class="comp_container">50%</h1>
+                                    
+                                </div>
+                                <div class="Stats_container">
+                                    <h5>Skills</h5>
+                                    <h1 class="comp_container">15</h1>
+                                   
+                                </div>
+                                <div class="Stats_container">
+                                    <h5>Modules</h5>
+                                    <h1 class="comp_container">01</h1>
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
                 </div>
             </div>
         </div>
