@@ -1,6 +1,6 @@
 let accOpend = false;
 let notiOpend = false;
-$(".popup").hide();
+// $(".popup").hide();
 function resetDropdowns() {
     notiOpend = false;
     accOpend = false;
@@ -72,7 +72,7 @@ let chatList = [
         ["instructorIssue 01", "instructorIssue 02", "instructorIssue 03", "instructorIssue 04", "instructorIssue 05"],
         [1, 2, 3, 4, 5]
     ]
-// this function dectect which page are you in and add points in pagination
+    // this function dectect which page are you in and add points in pagination
 function refresh() {
     if ($(".chat-body").attr("data-detect") === "1") {
         $(".back-icon").hide();

@@ -4,12 +4,12 @@
     --black-color: #2c2c2c;
 }
 
-.popup{
+.popup {
     background-color: #2c2c2c80;
     backdrop-filter: blur(10px);
     z-index: 99999999;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: fixed;
 }
 
@@ -17,7 +17,8 @@
     font-family: 'roboto';
     font-weight: 400;
 }
-body{
+
+body {
     overflow-y: auto;
 }
 
@@ -61,8 +62,6 @@ hr {
     transition: 300ms;
 }
 
-
-
 .chat-header {
     font-size: 13px;
     opacity: 0.7;
@@ -91,8 +90,6 @@ hr {
     cursor: pointer;
     transition: 300ms;
 }
-
-
 
 .chat-body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -356,7 +353,6 @@ hr {
     display: block;
 }
 
-
 .left-navigation .nav-conatainer li.active {
     background-color: var(--blue-color);
     color: white;
@@ -490,8 +486,6 @@ hr {
     transition: 300ms;
 }
 
-
-
 .notification-container .notification-item .noti_list_icon {
     opacity: 0.5;
     margin-right: 10px;
@@ -531,7 +525,8 @@ hr {
     margin-top: 30px;
     align-items: center;
 }
-.addstudent{
+
+.addstudent {
     display: block;
     margin-left: auto;
 }
@@ -543,7 +538,6 @@ hr {
     cursor: pointer;
     transition: 300ms;
 }
-
 
 .pages-navigation .pages-link.active {
     color: var(--blue-color);
@@ -617,8 +611,6 @@ hr {
     border-radius: 5px;
 }
 
-
-
 .button-48:after {
     background-color: #FFFFFF;
 }
@@ -639,8 +631,6 @@ hr {
     cursor: pointer;
     transition: 300ms;
 }
-
-
 
 .account-info-container {
     position: absolute;
@@ -684,8 +674,6 @@ hr {
     transition: 300ms;
 }
 
-
-
 .comp_container {
     width: 100%;
     background-color: white;
@@ -693,11 +681,13 @@ hr {
     border-radius: 20px;
     margin-bottom: 20px;
 }
-.container-l{
+
+.container-l {
     width: 100%;
     border-radius: 20px;
     margin-bottom: 20px;
 }
+
 .content-container {
     padding-right: 100px;
     padding-left: 10px;
@@ -774,7 +764,6 @@ hr {
         height: 50px;
         position: fixed;
         bottom: 0;
-        
     }
     .left-navigation .fixed-nav-position {
         width: 100%;
@@ -890,8 +879,8 @@ hr {
         padding-right: 25px;
         padding-left: 0;
     }
-   
 }
+
 @media (hover: hover) and (pointer: fine) {
     .account-info-item:hover {
         opacity: 1;
@@ -904,25 +893,25 @@ hr {
         clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
     }
     .pages-navigation .pages-link:hover {
-    color: var(--blue-color);
-    opacity: 1;
-    position: relative;
-}
-.notification-container .notification-item:hover {
-    background-color: var(--blue-color);
-    color: white;
-    padding: 10px;
-}
-.left-navigation .nav-conatainer li:hover {
-    background-color: var(--blue-color);
-    color: white;
-}
-.chat-body .chat-choices-items:hover {
-    background-color: var(--blue-color);
-    color: white;
-}
-.chat-header .leftside .back-icon:hover,
-.chat-header .close:hover {
-    opacity: 1;
-}
+        color: var(--blue-color);
+        opacity: 1;
+        position: relative;
+    }
+    .notification-container .notification-item:hover {
+        background-color: var(--blue-color);
+        color: white;
+        padding: 10px;
+    }
+    .left-navigation .nav-conatainer li:hover {
+        background-color: var(--blue-color);
+        color: white;
+    }
+    .chat-body .chat-choices-items:hover {
+        background-color: var(--blue-color);
+        color: white;
+    }
+    .chat-header .leftside .back-icon:hover,
+    .chat-header .close:hover {
+        opacity: 1;
+    }
 }

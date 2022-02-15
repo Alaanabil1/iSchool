@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;700;900&family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
@@ -18,7 +19,52 @@
 </head>
 
 <body>
-    <div class="popup"></div>
+    <div class="popup addstudent-pop">
+
+        <div class="content-container" data-page="">
+            <div class="back-close">
+                <div class="back"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="close"> <i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="student-payment-container">
+                <div class="student-payment-info">
+                    <div class="headding">Student Info</div>
+                    <hr>
+                    <div class="student-payment-labels">
+                        <span><a>Student Name :</a> Sayed Isamael Mohamed</span>
+                        <span><a>Age Range :</a> 6-8 Years</span>
+                        <span><a>Day :</a> Friday</span>
+                        <span><a>Starting Date :</a> 22/7/2022</span>
+                        <span><a>Time Slot :</a> 4:30 PM</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="student-payment-info">
+                    <div style="margin-top:30px;text-align: center;" class="headding">Select Payment Plan</div>
+                    <hr>
+                    <div class="student-payment-plans">
+                        <div class="payment-plans-container">
+                            <div class="header">Monthly Plan</div>
+                            <div class="price">1,990</div>
+                            <hr class="between">
+                            <li>Billed as 1,990 / Month</li>
+                            <li>Consist of 12 payments</li>
+                            <li>Total fees 23.880 EGP</li>
+                            <hr class="between">
+                            <div class="offer-container">
+                                <div class="form-floating">
+                                    <input type="text" style="height: 30px;font-size:13px;" class="form-control" id="Promo_input" placeholder="studentName">
+                                    <label for="Promo_input" style="opacity:0.5;font-size:13px;margin-top:-8px">Promo code</label>
+                                </div>
+                                <span>Apply offer</span>
+                            </div>
+                            <button class="btn btn-warning">Pay 1,990 EGP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid reset-margin">
         <div class="blackoverlay"><i class="fa-solid fa-xmark close-noti"></i></div>
         <div class="messanger" title="Contact Us"><i class="fa-brands fa-facebook-messenger"></i></div>
@@ -136,10 +182,10 @@
                     </div>
                 </div>
                 <div class="row students-container-parent">
-                   <div class="students-container col-auto">
-                  
-                </div>
-                <span class="View-more col-auto">
+                    <div class="students-container col-auto">
+
+                    </div>
+                    <span class="View-more col-auto">
                     <i class="fa-solid fa-chevron-right"></i>
                     <!-- Students List  -->
                     <ul class="students_list">
@@ -160,7 +206,7 @@
                         <li class="pages-link">Schedule</li>
                         <button style="font-size: 12px;" class="btn btn-primary addstudent"><i class="fa-solid fa-plus"></i> <a>Add Student</a></button>
                     </ul>
-                    
+
                     <hr>
                 </div>
                 <div class=".col-sm- content-container">
@@ -179,9 +225,9 @@
                             <div class="package-progress-container">
                                 <div class="progress-headers">
                                     <div class="befbar">
-                                         <div class="ava"><a>Available Quota :</a> 42 Sessions</div>
-                                         <div class="used"><a>Used Quota :</a> 20 Sessions </div>
-                                     </div>
+                                        <div class="ava"><a>Available Quota :</a> 42 Sessions</div>
+                                        <div class="used"><a>Used Quota :</a> 20 Sessions </div>
+                                    </div>
                                     <div class="progressbar-container">
                                         <div style="width:25%;" class="progressbar"></div>
                                     </div>
@@ -190,70 +236,70 @@
                         </div>
                     </div>
                     <div class="slice-container">
-                    <div  class="comp_container left ">
-                        <div class="upgradenow"></div>
-                        <div class="session-container">
-                            <div class="headding">
-                                Next Session Date & Time
-                            </div>
-                            <div class="countdown">
-                                <div class="comp_container">
-                                    <h1>01</h1>
-                                    <h5>Days</h5>
+                        <div class="comp_container left ">
+                            <div class="upgradenow"></div>
+                            <div class="session-container">
+                                <div class="headding">
+                                    Next Session Date & Time
                                 </div>
-                                <div class="comp_container">
-                                    <h1>01</h1>
-                                    <h5>Hours</h5>
+                                <div class="countdown">
+                                    <div class="comp_container">
+                                        <h1>01</h1>
+                                        <h5>Days</h5>
+                                    </div>
+                                    <div class="comp_container">
+                                        <h1>01</h1>
+                                        <h5>Hours</h5>
+                                    </div>
+                                    <div class="comp_container">
+                                        <h1>01</h1>
+                                        <h5>Minutes</h5>
+                                    </div>
+                                    <div class="comp_container">
+                                        <h1>01</h1>
+                                        <h5>Secounds</h5>
+                                    </div>
+
                                 </div>
-                                <div class="comp_container">
-                                    <h1>01</h1>
-                                    <h5>Minutes</h5>
-                                </div>
-                                <div class="comp_container">
-                                    <h1>01</h1>
-                                    <h5>Secounds</h5>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div  class="comp_container right">
-                        <div class="session-container">
-                            <div class="headding">
-                                Student Statistics
-                            </div>
-                            <div class="Statics">
-                               
-                                <div class="Stats_container">
-                                    <h5>Attendance</h5>
-                                    <h1 class="comp_container" >45/50</h1>
-                                </div>
-                                <div class="Stats_container">
-                                    <h5>Tasks</h5>
-                                    <h1 class="comp_container">45/50</h1>
-                                    
-                                </div>
-                                <div class="Stats_container">
-                                    <h5>Session Score</h5>
-                                    <h1 class="comp_container">50%</h1>
-                                    
-                                </div>
-                                <div class="Stats_container">
-                                    <h5>Skills</h5>
-                                    <h1 class="comp_container">15</h1>
-                                   
-                                </div>
-                                <div class="Stats_container">
-                                    <h5>Modules</h5>
-                                    <h1 class="comp_container">01</h1>
-                                    
-                                </div>
-                               
                             </div>
                         </div>
+                        <div class="comp_container right">
+                            <div class="session-container">
+                                <div class="headding">
+                                    Student Statistics
+                                </div>
+                                <div class="Statics">
+
+                                    <div class="Stats_container">
+                                        <h5>Attendance</h5>
+                                        <h1 class="comp_container">45/50</h1>
+                                    </div>
+                                    <div class="Stats_container">
+                                        <h5>Tasks</h5>
+                                        <h1 class="comp_container">45/50</h1>
+
+                                    </div>
+                                    <div class="Stats_container">
+                                        <h5>Session Score</h5>
+                                        <h1 class="comp_container">50%</h1>
+
+                                    </div>
+                                    <div class="Stats_container">
+                                        <h5>Skills</h5>
+                                        <h1 class="comp_container">15</h1>
+
+                                    </div>
+                                    <div class="Stats_container">
+                                        <h5>Modules</h5>
+                                        <h1 class="comp_container">01</h1>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                </div>
 
                 </div>
             </div>
@@ -261,6 +307,7 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
