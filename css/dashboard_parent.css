@@ -8,6 +8,32 @@
     display: flex;
 }
 
+.expired {
+    position: relative;
+    backdrop-filter: blur(100px);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.expired::after {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    content: attr(data-issue);
+    border-radius: 25px;
+    background-color: var(--black-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .addstudent-pop .content-body {
     width: 40%;
     margin: auto;
@@ -30,7 +56,8 @@
     display: flex;
     justify-content: space-between;
 }
-.student-payment-plans{
+
+.student-payment-plans {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -94,7 +121,6 @@
     align-items: center;
     justify-content: space-around;
 }
-
 
 .payment-plans-container .offer-container span {
     font-size: 13px;
@@ -211,6 +237,116 @@
     align-items: center;
     padding-top: 20px;
     flex-wrap: wrap;
+}
+
+.content-container.body {
+    padding-bottom: 120px;
+}
+
+.sessoions-container-body {
+    display: flex;
+}
+
+.sessoions-container-body .next-session-btn {
+    height: 200px;
+    background-color: white;
+    width: 50px;
+    border-top: 3px solid var(--blue-color);
+    border-left: 3px solid var(--blue-color);
+    border-bottom: 3px solid var(--blue-color);
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    justify-content: center;
+    color: var(--black-color);
+    align-items: center;
+    transition: 300ms;
+    position: relative;
+    cursor: pointer;
+}
+
+.sessoions-container-body .next-session-btn:hover {
+    width: 100px;
+    background-color: #1955CC;
+    color: white;
+    padding-right: 10px;
+}
+
+.tab-content {
+    height: 53vh;
+    overflow-x: auto;
+}
+
+.sessoions-container-body .next-session-btn::before {
+    content: "Next Session";
+    font-size: 13px;
+    text-align: left;
+    margin-left: 15px;
+    transition: 300ms;
+    display: none;
+    cursor: pointer;
+}
+
+.sessoions-container-body .next-session-btn:hover::before {
+    display: block;
+}
+
+.sessoions-container-body .last-session-btn {
+    height: 200px;
+    background-color: white;
+    width: 50px;
+    border-top: 3px solid var(--blue-color);
+    border-right: 3px solid var(--blue-color);
+    border-bottom: 3px solid var(--blue-color);
+    border-radius: 0px 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    position: relative;
+    cursor: pointer;
+}
+
+.session-expand-comp {
+    background-color: white;
+    border: 1.5px dashed rgba(44, 44, 44, 0.2);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 4px #00000012;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+.session-expand-comp .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.session-expand-comp .paragraph {
+    font-size: 14px;
+}
+
+.sessoions-container-body .last-session-btn:hover {
+    width: 100px;
+    background-color: #1955CC;
+    color: white;
+    padding-left: 10px;
+}
+
+.sessoions-container-body .last-session-btn::after {
+    content: "Previous Session";
+    font-size: 13px;
+    text-align: right;
+    margin-right: 20px;
+    transition: 300ms;
+    display: none;
+    cursor: pointer;
+}
+
+.sessoions-container-body .last-session-btn:hover::after {
+    display: block;
+}
+
+.sessoions-container-body .tab-content {
+    margin: 0 30px;
 }
 
 .addstudent-pop input {
@@ -407,6 +543,7 @@
     width: 100px;
     border-radius: 10px;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .countdown .comp_container h5 {
@@ -458,6 +595,195 @@
     border-radius: 10px;
 }
 
+.taskscomp .paragraph,
+.feedbackcomp .paragraph {
+    position: relative;
+    padding-right: 50px;
+}
+
+.taskscomp .paragraph::after,
+.feedbackcomp .paragraph::after {
+    position: absolute;
+    content: attr(data-precent);
+    right: 20px;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.activty-comp {
+    width: 165px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+}
+
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+}
+
+.wrapper {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.button-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+.carousel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 173px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease;
+    margin-left: 2rem;
+}
+
+.card {
+    min-width: 173px;
+    height: 200px;
+    margin-right: 1px;
+    display: inline-block;
+    border: none;
+    ;
+}
+
+.activty-comp::after {
+    position: absolute;
+    content: 'Progress ' attr(data-progress) ' ' "%";
+    bottom: -10px;
+    color: #2c2c2c80;
+    font-size: 12px;
+}
+
+.activty-comp.upcomming .activty-icon {
+    box-shadow: 0px 2px 10px 4px #00000012;
+    background: #C4C4C433;
+}
+
+.activty-comp.upcomming .activty-name {
+    opacity: 0.4;
+}
+
+.activty-comp.upcomming .activty-progress-container {
+    visibility: collapse;
+}
+
+.activty-comp.upcomming::after {
+    width: 80%;
+    background-color: gray;
+    content: 'UPCOMMING';
+    font-family: 'cairo';
+    color: white;
+    bottom: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.activty-comp .activty-icon {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: block;
+}
+
+.activty-comp .activty-icon.done {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid #0000001A;
+    box-shadow: 0px 2px 10px 4px #00000012;
+    position: relative;
+}
+
+.activty-comp .activity-thumb {
+    background-color: var(--orange-color);
+    height: 15px;
+    border-radius: 20px;
+}
+
+.activty-comp .activty-icon.done::after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 60px;
+    content: "\f00c";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #06b800;
+}
+
+.activty-comp .activty-progress-container {
+    width: 100%;
+    background: #C4C4C4;
+    height: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.activty-comp .activty-progress-container .skills-comp {
+    width: 130px;
+    background-color: white;
+    border: 1.5px dashed rgba(44, 44, 44, 0.2);
+    box-shadow: 0px 0px 10px 4px #00000012;
+    border-radius: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-comp .title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.skill-icon img {
+    width: 140px;
+}
+
 @media screen and (max-width: 1050px) {
     .slice-container {
         width: 100%;
@@ -487,10 +813,87 @@
     .Stats_container .comp_container {
         text-align: center;
         width: 100px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:880px) {
+    .sessoions-container-body .tab-content {
+        margin: 0px;
+    }
+    .sessoions-container-body .next-session-btn {
+        height: 30px;
+        background-color: white;
+        width: 30px;
+        border: none;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        color: var(--black-color);
+        align-items: center;
+        transition: 300ms;
+        position: relative;
+        cursor: pointer;
+        background-color: #1955CC;
+        color: white;
+    }
+    .sessoions-container-body .next-session-btn:hover {
+        width: 30px;
+        background-color: #1955CC;
+        color: white;
+        padding-right: 0;
+    }
+    .tab-content {
+        height: auto;
+        overflow-x: auto;
+    }
+    .sessoions-container-body .next-session-btn::before {
+        display: none;
+    }
+    .sessoions-container-body .next-session-btn:hover::before {
+        display: none;
+    }
+    .sessoions-container-body .last-session-btn {
+        height: 30px;
+        background-color: var(--blue-color);
+        color: white;
+        width: 30px;
+        border-radius: 20px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms;
+        position: relative;
+        cursor: pointer;
+    }
+    .sessoions-container-body .last-session-btn:hover {
+        width: 30px;
+        padding: 0;
+    }
+    .sessoions-container-body .last-session-btn::after {
+        display: none;
+    }
+    .sessoions-container-body .last-session-btn:hover::after {
+        display: none;
     }
 }
 
 @media screen and (max-width:570px) {
+    .student-payment-info .student-payment-labels span {
+        margin: 0px 5px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+    }
+    .Stats_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-bottom: -20px;
+    }
     .pages-navigation button a {
         display: none;
     }
@@ -557,7 +960,8 @@
     }
     .countdown .comp_container {
         width: 100px;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        position: relative;
     }
     .session-container .Statics,
     .session-container .countdown {
@@ -596,7 +1000,6 @@
         border-radius: 5px;
         background-color: white;
         width: auto;
-        
         padding: 0 5%;
         height: 30px;
         display: flex;
@@ -615,6 +1018,7 @@
         font-size: 13px;
     }
 }
+
 @media screen and (max-width:440px) {
     .ages-buttons-container .ages-button {
         border: 0.5px solid #FFFFFF40;
@@ -623,7 +1027,6 @@
         background-color: white;
         width: auto;
         padding: 0 5px;
-       
         height: 30px;
         display: flex;
         justify-content: center;
@@ -633,5 +1036,4 @@
         font-size: 11px;
         font-weight: 500;
     }
-    
 }
