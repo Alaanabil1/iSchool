@@ -5,7 +5,7 @@ $(".View-more .fa-chevron-right").click(function() {
 })
 parent_clicks();
 generateStudentsmenu();
-// overView();
+overView();
 
 function resetStudents() {
     $(".students-container .Active").removeClass("Active")
@@ -241,65 +241,100 @@ function resetSchedule() {
 AddstudentClicks();
 
 function AddstudentClicks() {
+    $(".achieve-comp").click(function() {
+        achievesPopupexpand();
+    })
+    $(".viewallAch").click(function() {
+        AllachivesPopup();
 
-// Add the click events
-$(".activities .slideLeft").click(function(){
-    activitiesAch()
-    carouselWidth = carousel.offsetWidth;
-    if($(".activities .wrapper").width() <= (-1 *maxX )){
-    if (offset !== 0) {
-        offset += 153.5;
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-}
-    else{
+    })
+    $(".activty-comp").click(function() {
+        activityPopupexpand();
+    });
+    $(".activty-comp-all").click(function() {
+        activityPopupexpand();
+    });
+    $(".viewallatv").click(function() {
+        AllactivityPopup();
+    })
+    const carousel = $(".activty")
+    const carousel01 = $(".achieve")
+    const card = $(".activty-comp")
+    const card01 = $(".achieve-comp")
 
-    }
-})
 
-$(".activities .slideRight").click(function(){
-   
-    carouselWidth = carousel.offsetWidth;
-    if($(".activities .wrapper").width() <= (-1 *maxX )){
-    if (offset !== maxX) {
-        
-        offset -= 153.5;
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-}
-    else{
-        
-    }
-})
+    // Prepare to limit the direction in which the carousel can slide, 
+    // and to control how much the carousel advances by each time.
+    // In order to slide the carousel so that only three cards are perfectly visible each time,
+    // you need to know the carousel width, and the margin placed on a given card in the carousel
+    let carouselWidth = carousel.offsetWidth;
+    let carouselWidth01 = carousel01.offsetWidth;
 
-$(".achieve .slideLeft").click(function(){
-    activitiesAch()
-    carouselWidth01 = carousel01.offsetWidth;
-    if($(".achieve .wrapper").width() <= (-1 *maxX01 )){
-    if (offset01 !== 0) {
-        offset01 += 153.5;
-        carousel01.style.transform = `translateX(${offset01}px)`;
-    }
-}
-    else{
 
-    }
-})
+    // Count the number of total cards you have
+    const cardCount = $(".activty-comp").length;
+    const cardCount01 = $(".achieve-comp").length;
 
-$(".achieve .slideRight").click(function(){
-    activitiesAch()
-    carouselWidth01 = carousel01.offsetWidth;
-    if($(".achieve .wrapper").width() <= (-1 *maxX01 )){
-    if (offset01 !== maxX01) {
-        
-        offset01 -= 153.5;
-        carousel01.style.transform = `translateX(${offset01}px)`;
-    }
-}
-    else{
-        
-    }
-})
+    // Define an offset property to dynamically update by clicking the button controls
+    // as well as a maxX property so the carousel knows when to stop at the upper limit
+    let offset = 0;
+    let offset01 = 0;
+    const maxX = -250 * (cardCount - 1)
+    const maxX01 = -250 * (cardCount01 - 1)
+        // Add the click events
+    $(".activities .slideLeft").click(function() {
+
+        carouselWidth = carousel.width();
+        if (offset <= ((-1 * maxX))) {
+            if (offset !== 0) {
+                offset += $(".activities .wrapper").width();
+                carousel.css("transform", `translateX(${offset}px)`);
+            }
+        } else {
+
+        }
+    })
+
+    $(".activities .slideRight").click(function() {
+
+        carouselWidth = carousel.width();
+        if (offset > ((maxX))) {
+            if (offset !== maxX) {
+
+                offset -= $(".activities .wrapper").width();
+                carousel.css("transform", `translateX(${offset}px)`);
+            }
+        } else {
+
+        }
+    })
+
+    $(".achieves .slideLeft").click(function() {
+
+        carouselWidth01 = carousel01.width();
+        if (offset01 <= ((-1 * maxX01))) {
+            if (offset01 !== 0) {
+                offset01 += $(".activities .wrapper").width();
+                carousel01.css("transform", `translateX(${offset01}px)`);
+            }
+        } else {
+
+        }
+    })
+
+    $(".achieves .slideRight").click(function() {
+
+        carouselWidth01 = carousel01.width();
+        if (offset01 > ((maxX01 + $(".achieves .wrapper").width()))) {
+            if (offset01 !== maxX01) {
+
+                offset01 -= $(".activities .wrapper").width();
+                carousel01.css("transform", `translateX(${offset01}px)`);
+            }
+        } else {
+
+        }
+    })
 
 
     actComps = $(".activty-comp").length;
@@ -322,9 +357,6 @@ $(".achieve .slideRight").click(function(){
     }
 
 
-    $(".addstudent").click(function() {
-        addNewstudent();
-    })
     $(".ages-button").click(function() {
         resetAgeranges();
         $(this).addClass("active")
@@ -357,18 +389,29 @@ $(".achieve .slideRight").click(function(){
         $(".addstudent-pop .content-container").attr("data-page", " ")
         addNewstudent();
     })
-    $(".pages-link.overview").click(function() {
-        overView();
-    })
-    $(".pages-link.sessions").click(function() {
-        sessions();
-    })
-    $("tbody tr").click(function() {
+
+
+    $(".session-expand-table tbody tr").click(function() {
         sessionExpand();
+    })
+    $(".expandsession.back").click(function() {
+        sessions();
     })
 
 
 }
+$(".pages-link.overview").click(function() {
+    overView();
+})
+$(".pages-link.sessions").click(function() {
+    sessions();
+})
+$(".pages-link.achievements").click(function() {
+    achievements();
+})
+$(".addstudent").click(function() {
+    addNewstudent();
+})
 
 function resetTopnav() {
     $(".pages-link").removeClass("active")
@@ -384,7 +427,7 @@ function overView() {
         <span><a>Age :</a> 5 Years old</span>
     </div>
 </div>
-<div data-issue="Membership Expired Upgrade Now" class="comp_container expired">
+<div data-issue="upgrade now please" class="comp_container expired">
     <div class="package-container">
         <div class="headding">
             Package Information
@@ -475,7 +518,7 @@ function sessions() {
 
     resetTopnav();
     $(".pages-link.sessions").addClass("active")
-    $(".content-container.body").html(`<table>
+    $(".content-container.body").html(`<table class="session-expand-table">
 
     <thead>
         <tr>
@@ -591,7 +634,7 @@ function sessions() {
 }
 
 function sessionExpand() {
-    $(".content-container.body").html(`   <div class="back"><i class="fa-solid fa-arrow-left"></i></div>
+    $(".content-container.body").html(`   <div class="expandsession back"><i class="fa-solid fa-arrow-left"></i></div>
     <div class="session-title" style="text-align:center; color:#2c2c2c80; font-size:20px;">
         Session 01 : <a style="font-weight:bold; color:#2c2c2c;">Title</a>
     </div>
@@ -842,33 +885,372 @@ function sessionExpand() {
 `);
     AddstudentClicks();
 }
-function activitiesAch(){
-    
-const carousel = document.querySelector("[data-target='activty']");
-const carousel01 = document.querySelector("[data-target='achieve']");
-const card = carousel.querySelector("[data-target='activty-comp']");
-const card01 = carousel01.querySelector("[data-target='achieve-comp']");
+
+function achievements() {
+    $(".content-container.body").html(` <div class="comp_container" style=" padding: 20px 30px;">
+    <div class="headding">Recent Activities</div>
+    <div class="row align-items-center activities">
+        <div class="col-auto slideLeft" data-action="slideLeft"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="col activities-container">
+            <div class="wrapper">
+                <ul class="carousel activty" data-target="activty">
+                    <li class="activty-comp activityclick" data-progress="100" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="activty-comp" data-progress="30" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="activty-comp" data-progress="70" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="activty-comp" data-progress="80" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="activty-comp" data-progress="20" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="activty-comp" data-progress="10" data-target="activty-comp">
+                        <div class="activty-icon"></div>
+                        <div class="activty-name" style="text-align: center;">Activity Name</div>
+                        <div class="activty-progress-container">
+                            <div class="activity-thumb"></div>
+                        </div>
+                    </li>
 
 
-// Prepare to limit the direction in which the carousel can slide, 
-// and to control how much the carousel advances by each time.
-// In order to slide the carousel so that only three cards are perfectly visible each time,
-// you need to know the carousel width, and the margin placed on a given card in the carousel
-let carouselWidth = carousel.offsetWidth;
-let carouselWidth01 = carousel01.offsetWidth;
-const cardStyle = card.currentStyle || window.getComputedStyle(card)
-const cardStyle01 = card01.currentStyle || window.getComputedStyle(card01)
-const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
+                </ul>
 
-// Count the number of total cards you have
-const cardCount = carousel.querySelectorAll("[data-target='activty-comp']").length;
-const cardCount01 = carousel01.querySelectorAll("[data-target='achieve-comp']").length;
 
-// Define an offset property to dynamically update by clicking the button controls
-// as well as a maxX property so the carousel knows when to stop at the upper limit
-let offset = 0;
-let offset01 = 0;
-const maxX = -153.5* (cardCount - 1)
-const maxX01 = -153.5* (cardCount01 - 1)
-AddstudentClicks();
+            </div>
+        </div>
+        <div class="col-auto slideRight" data-action="slideRight"><i class="fa-solid fa-angle-right"></i></div>
+    </div>
+    <button style="margin-top: 50px; display: block; margin-left:auto;" class="btn btn-secondary viewallatv">View all</button>
+</div>
+<div class="comp_container" style=" padding: 20px 30px;">
+    <div class="headding">Rececnt Achievements</div>
+    <div class="row align-items-center achieves">
+        <div class="col-auto slideLeft" data-action="slideLeft"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="col achieve-container">
+            <div class="wrapper">
+                <ul class="carousel achieve" data-target="achieve">
+                    <li class="achieve-comp" data-progress="100" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+                    <li class="achieve-comp" data-progress="20" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+                    <li class="achieve-comp" data-progress="70" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+                    <li class="achieve-comp" data-progress="80" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+                    <li class="achieve-comp" data-progress="20" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+                    <li class="achieve-comp" data-progress="10" data-target="achieve-comp">
+                        <div class="achieve-icon"></div>
+                        <div class="achieve-name" style="text-align: center;">Activity Name</div>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-auto slideRight" data-action="slideRight"><i class="fa-solid fa-angle-right"></i></div>
+    </div>
+    <button style="margin-top: 0px; display: block; margin-left:auto;" class="btn btn-secondary viewallAch">View all</button>
+
+</div>
+`)
+    resetTopnav();
+    $(".pages-link.achievements").addClass("active")
+    AddstudentClicks();
+}
+
+function AllactivityPopup() {
+
+    $(".popup .content-container").html(`<div class="close"><i class="fa-solid fa-xmark"></i></div>
+    <div style="display:flex; flex-wrap:wrap;justify-content:center;" class="all-activites-container">
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+        <div class="activty-comp-all">
+            <div class="activty-icon"></div>
+            <div class="activty-name" style="text-align: center;">Activity Name</div>
+        </div>
+    </div>`)
+    if ($(".popup").css("display") === "none") {
+        $(".popup").show("fast");
+    }
+    AddstudentClicks();
+}
+
+function AllachivesPopup() {
+
+    $(".popup .content-container").html(` <div class="close"><i class="fa-solid fa-xmark"></i></div>
+    <div style="display:flex; flex-wrap:wrap;justify-content:center;" class="all-achieves-container">
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+        <div class="achieve-comp" data-target="achieve-comp">
+            <div class="achieve-icon"></div>
+            <div class="achieve-name" style="text-align: center;">Achievement Name</div>
+
+        </div>
+    </div>`)
+    if ($(".popup").css("display") === "none") {
+        $(".popup").show("fast");
+    }
+    AddstudentClicks();
+}
+
+function activityPopupexpand() {
+
+    $(".popup .content-container").html(` <div style="display: flex; flex-wrap:nowrap;justify-content:space-between;" class="close-viewall-container">
+    <button class="btn btn-secondary viewallatv">View all</button>
+    <div class="close"><i class="fa-solid fa-xmark"></i></div>
+
+</div>
+
+<div style="text-align:center;" class="headding">Activity Name</div>
+<div class="activity-progress-info" style="display: flex;justify-content:space-between;">
+    <div class="total">Total sessions: <a>40</a></div>
+    <div class="completed">completed sessions: <a>20</a></div>
+</div>
+<div data-total="40" data-completed="20" class="activty-progress-container activity-pop-progress">
+    <div class="activity-thumb"></div>
+</div>
+<table>
+
+    <thead>
+        <tr>
+            <th class="col-6" scope="col">Session</th>
+            <th scope="col-auto">Date</th>
+            <th scope="col-auto">Attendance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+        <tr class="module-table-item disabled">
+            <td data-label="Sessions">Session 01</td>
+            <td data-label="Date">Module 01</td>
+            <td data-label="Attendance"><i class="fa-solid fa-check"></i></td>
+        </tr>
+
+    </tbody>
+</table>`);
+
+
+    if ($(".popup").css("display") === "none") {
+        $(".popup").show("fast");
+    }
+    detectActthumb()
+    AddstudentClicks();
+    console.log($(".activity-pop-progress .activity-thumb").width())
+}
+
+function achievesPopupexpand() {
+
+    $(".popup .content-container").html(`<div class="close"><i class="fa-solid fa-xmark"></i></div>
+    <button style="margin-top: 0px; display: block; margin-right:auto;" class="btn btn-secondary viewallAch">View all</button>
+    <div class="headding" style="text-align: center;">Achievement name</div>
+    <div class="achives-content" style="width: 100%; height:80%;background-color:#2c2c2c;"></div>`);
+
+
+    if ($(".popup").css("display") === "none") {
+        $(".popup").show("fast");
+    }
+    AddstudentClicks();
+}
+
+function detectActthumb() {
+    $(".activity-progress-info .total a").html($(".activity-pop-progress").attr("data-total"));
+    $(".activity-progress-info .completed a").html($(".activity-pop-progress").attr("data-completed"));
+    $(".activity-pop-progress .activity-thumb").width((($(".activity-pop-progress").attr("data-completed") / $(".activity-pop-progress").attr("data-total")) * 100) + "%")
 }

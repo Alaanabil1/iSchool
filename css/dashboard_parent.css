@@ -34,6 +34,10 @@
     align-items: center;
 }
 
+.expandsession.back {
+    cursor: pointer;
+}
+
 .addstudent-pop .content-body {
     width: 40%;
     margin: auto;
@@ -611,7 +615,7 @@
 }
 
 .activty-comp {
-    width: 165px;
+    width: 250px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -619,17 +623,49 @@
     align-items: center;
     margin: 20px 20px;
     position: relative;
+    cursor: pointer;
+}
+
+.activty-comp-all {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+    cursor: pointer;
 }
 
 .activities-container {
     display: flex;
-    flex-wrap: wrap;
+    max-width: 100%;
     height: auto;
     justify-content: center;
 }
 
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+    height: 200px;
+}
+
+.wrapper .carousel {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    transition: 300ms;
+}
+
 .achieve-comp {
-    width: 165px;
+    width: 150px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -637,6 +673,7 @@
     align-items: center;
     margin: 20px 20px;
     position: relative;
+    cursor: pointer;
 }
 
 .achieve-container {
@@ -652,44 +689,6 @@
     height: 100px;
     background-color: lightgray;
     display: block;
-}
-
-.wrapper {
-    height: 200px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.button-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-}
-
-.carousel {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 173px;
-    display: flex;
-    position: absolute;
-    left: 0;
-    transition: all 1s ease;
-    margin-left: 2rem;
-}
-
-.card {
-    min-width: 173px;
-    height: 200px;
-    margin-right: 1px;
-    display: inline-block;
-    border: none;
-    ;
 }
 
 .activty-comp::after {
@@ -727,24 +726,44 @@
     font-size: 15px;
 }
 
+.activity-pop-progress {
+    position: relative;
+}
+
+.module-table-item.disabled {
+    opacity: 0.3;
+}
+
+.module-table-item.disabled:hover {
+    cursor: not-allowed;
+}
+
+.activty-comp-all .activty-icon {
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    background-color: lightgray;
+    display: block;
+}
+
 .activty-comp .activty-icon {
     border-radius: 100%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: lightgray;
     display: block;
 }
 
 .activty-comp .activty-icon.done {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: white;
     border: 1px solid #0000001A;
     box-shadow: 0px 2px 10px 4px #00000012;
     position: relative;
 }
 
-.activty-comp .activity-thumb {
+.activity-thumb {
     background-color: var(--orange-color);
     height: 15px;
     border-radius: 20px;
@@ -762,7 +781,7 @@
     color: #06b800;
 }
 
-.activty-comp .activty-progress-container {
+.activty-progress-container {
     width: 100%;
     background: #C4C4C4;
     height: 15px;
@@ -790,14 +809,19 @@
     flex-wrap: wrap;
 }
 
+.skills-comp {
+    margin: 30px;
+}
+
 .skills-comp .title {
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .skill-icon {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     overflow: hidden;
     display: flex;
@@ -807,7 +831,7 @@
 }
 
 .skill-icon img {
-    width: 140px;
+    width: 190px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -906,6 +930,25 @@
 }
 
 @media screen and (max-width:570px) {
+    .activty-comp {
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin: 20px 20px;
+        position: relative;
+        cursor: pointer;
+    }
+    .wrapper .carousel {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        z-index: 100000;
+        transition: 300ms;
+    }
     .student-payment-info .student-payment-labels span {
         margin: 0px 5px;
         margin-bottom: 10px;
