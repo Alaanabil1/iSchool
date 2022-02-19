@@ -241,6 +241,67 @@ function resetSchedule() {
 AddstudentClicks();
 
 function AddstudentClicks() {
+
+// Add the click events
+$(".activities .slideLeft").click(function(){
+    activitiesAch()
+    carouselWidth = carousel.offsetWidth;
+    if($(".activities .wrapper").width() <= (-1 *maxX )){
+    if (offset !== 0) {
+        offset += 153.5;
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+}
+    else{
+
+    }
+})
+
+$(".activities .slideRight").click(function(){
+   
+    carouselWidth = carousel.offsetWidth;
+    if($(".activities .wrapper").width() <= (-1 *maxX )){
+    if (offset !== maxX) {
+        
+        offset -= 153.5;
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+}
+    else{
+        
+    }
+})
+
+$(".achieve .slideLeft").click(function(){
+    activitiesAch()
+    carouselWidth01 = carousel01.offsetWidth;
+    if($(".achieve .wrapper").width() <= (-1 *maxX01 )){
+    if (offset01 !== 0) {
+        offset01 += 153.5;
+        carousel01.style.transform = `translateX(${offset01}px)`;
+    }
+}
+    else{
+
+    }
+})
+
+$(".achieve .slideRight").click(function(){
+    activitiesAch()
+    carouselWidth01 = carousel01.offsetWidth;
+    if($(".achieve .wrapper").width() <= (-1 *maxX01 )){
+    if (offset01 !== maxX01) {
+        
+        offset01 -= 153.5;
+        carousel01.style.transform = `translateX(${offset01}px)`;
+    }
+}
+    else{
+        
+    }
+})
+
+
     actComps = $(".activty-comp").length;
     console.log(actComps)
     for (let i = 0; i < actComps; i++) {
@@ -305,6 +366,8 @@ function AddstudentClicks() {
     $("tbody tr").click(function() {
         sessionExpand();
     })
+
+
 }
 
 function resetTopnav() {
@@ -779,38 +842,33 @@ function sessionExpand() {
 `);
     AddstudentClicks();
 }
-const carousel = document.querySelector("[data-target='carousel']");
-const card = carousel.querySelector("[data-target='card']");
-const leftButton = document.querySelector("[data-action='slideLeft']");
-const rightButton = document.querySelector("[data-action='slideRight']");
+function activitiesAch(){
+    
+const carousel = document.querySelector("[data-target='activty']");
+const carousel01 = document.querySelector("[data-target='achieve']");
+const card = carousel.querySelector("[data-target='activty-comp']");
+const card01 = carousel01.querySelector("[data-target='achieve-comp']");
+
 
 // Prepare to limit the direction in which the carousel can slide, 
 // and to control how much the carousel advances by each time.
 // In order to slide the carousel so that only three cards are perfectly visible each time,
 // you need to know the carousel width, and the margin placed on a given card in the carousel
-const carouselWidth = carousel.offsetWidth;
+let carouselWidth = carousel.offsetWidth;
+let carouselWidth01 = carousel01.offsetWidth;
 const cardStyle = card.currentStyle || window.getComputedStyle(card)
+const cardStyle01 = card01.currentStyle || window.getComputedStyle(card01)
 const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
 
 // Count the number of total cards you have
-const cardCount = carousel.querySelectorAll("[data-target='card']").length;
+const cardCount = carousel.querySelectorAll("[data-target='activty-comp']").length;
+const cardCount01 = carousel01.querySelectorAll("[data-target='achieve-comp']").length;
 
 // Define an offset property to dynamically update by clicking the button controls
 // as well as a maxX property so the carousel knows when to stop at the upper limit
 let offset = 0;
-const maxX = -130 * (cardCount - 1)
-
-// Add the click events
-leftButton.addEventListener("click", function() {
-    if (offset !== 0) {
-        offset += 130;
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-})
-
-rightButton.addEventListener("click", function() {
-    if (offset !== maxX) {
-        offset -= 130;
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-})
+let offset01 = 0;
+const maxX = -153.5* (cardCount - 1)
+const maxX01 = -153.5* (cardCount01 - 1)
+AddstudentClicks();
+}

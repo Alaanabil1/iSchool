@@ -628,6 +628,32 @@
     justify-content: center;
 }
 
+.achieve-comp {
+    width: 165px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+}
+
+.achieve-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+}
+
+.achieve-comp .achieve-icon {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: block;
+}
+
 .wrapper {
     height: 200px;
     width: 100%;
