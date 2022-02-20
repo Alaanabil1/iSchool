@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/global.css">
+    <!-- <link rel="stylesheet" href="css/global.css"> -->
     <link rel="stylesheet" href="css/registernewaccount.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +66,7 @@
 
     </div>
     <div class="coontent-container">
+        <div class="step01" >
         <div class="row headding">
             <h1>Register a New Account</h1>
             <p>Already registered?</p>
@@ -107,7 +108,7 @@
                         <label for="usernameInput">Email Address</label>
                       </div>
                 </div>
-                <div class="row twosides">
+                <div class="row twosides" style="margin-bottom: 20px;">
                     <div class="form-floating mb-3">
                         <input type="tel" class="form-control" id="phonenumInput" placeholder="Phone Number">
                         <label for="phonenumInput">Phone Number</label>
@@ -365,6 +366,20 @@
                       </div>
                      
                 </div>
+                <h4 style="color: #2c2c2c;">Student Information</h4>
+                <hr>
+                <div class="row twosides">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="studentnameInput" placeholder="Student Name">
+                        <label for="studentnameInput">Student Name</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ageInput" placeholder="Student Age">
+                        <label for="ageInput">Student Age</label>
+                      </div>
+                </div>
+                
+                <button class="btn btn-primary signup">Sign up</button>
             </div>
             <div class="col picture">
                 <div class="title-right">
@@ -373,6 +388,137 @@
                 </div>
                 <img src="img/OBJECTS.svg" alt=""></div>
         </div>
+    </div>
+    <div class="step02" style="display: none;">
+      
+        <div class="row headding" style="margin-bottom: 30px;">
+            <h1>Select You Schedule</h1>
+        </div>
+        <div class="row body">
+            <div class="col form">
+                <h4 style="color: #2c2c2c;">Select Schedule</h4>
+                <hr>
+                
+                <div class="row">
+                <div class="row scheduletablehead ">
+                    <span class="col-auto">Starting date</span>
+                    <span class="col-3">Day</span>
+                    <span class="col-3">Time</span>
+                    <span class="col"></span>
+                </div>
+                <div class="row scheduletableitem">
+                    <span class="col-auto">22/07/2022</span>
+                    <span class="col-3">Friday</span>
+                    <span class="col-3">4:30 PM</span>
+                    <span class="col"><a class="check"></a></span>
+                </div>
+                <div class="row scheduletableitem ">
+                    <span class="col-auto">22/07/2022</span>
+                    <span class="col-3">Wednesday</span>
+                    <span class="col-3">10:30 PM</span>
+                    <span class="col"><a class="check"></a></span>
+                </div>
+                <div class="row scheduletableitem ">
+                    <span class="col-auto">22/07/2022</span>
+                    <span class="col-3">Sunday</span>
+                    <span class="col-3">4:30 PM</span>
+                    <span class="col"><a  class="check"></a></span>
+                </div>
+                <div class="row scheduletableitem ">
+                    <span class="col-auto">22/07/2022</span>
+                    <span class="col-3">Tuesday</span>
+                    <span class="col-3">4:30 PM</span>
+                    <span class="col"><a  class="check"></a></span>
+                </div>
+                <div class="row scheduletableitem ">
+                    <span class="col-auto">22/07/2022</span>
+                    <span class="col-3">Friday</span>
+                    <span class="col-3">4:30 PM</span>
+                    <span class="col"><a class="check"></a></span>
+                </div>
+                </div>
+             
+                     
+                
+                
+                <button class="btn btn-primary next">Next</button>
+            </div>
+            <div class="col picture">
+                <div class="title-right">
+                    <b> Tech  leaders</b>
+                    <br>started from
+                    here.
+                </div>
+                <img src="img/hero 1.png" alt=""></div>
+        </div>
+    </div>
+    <div class="step03" style="display: none;">
+    <div class="row headding" style="margin-bottom: 30px;">
+        <h1>Select a payment plan</h1>
+        <div class="student-payment-container">
+        
+            <div class="student-payment-info">
+          
+               
+                <div class="student-payment-plans">
+                    <div class="payment-plans-container">
+                        <div class="header">Monthly Plan</div>
+                        <div class="price">1,990</div>
+                        <hr class="between">
+                        <li>Billed as 1,990 / Month</li>
+                        <li>Consist of 12 payments</li>
+                        <li>Total fees 23.880 EGP</li>
+                        <hr class="between">
+                        <div class="offer-container">
+                            <div class="form-floating">
+                                <input type="text" style="height: 30px;font-size:13px;" class="form-control" id="Promo_input" placeholder="studentName">
+                                <label for="Promo_input" style="opacity:0.5;font-size:13px;margin-top:-8px">Promo code</label>
+                            </div>
+                            <span>Apply offer</span>
+                        </div>
+                        <button class="btn btn-warning">Pay 1,990 EGP</button>
+                    </div>
+                    <div class="payment-plans-container">
+                        <div class="header">Quarterly Plan</div>
+                        <div class="price">1,790</div>
+                        <hr class="between">
+                        <li>Billed as 5,370 / Month</li>
+                        <li>Consist of 4 payments</li>
+                        <li>Total fees 21.480 EGP</li>
+                        <hr class="between">
+                        <div class="offer-container">
+                            <div class="form-floating">
+                                <input type="text" style="height: 30px;font-size:13px;" class="form-control" id="Promo_input" placeholder="studentName">
+                                <label for="Promo_input" style="opacity:0.5;font-size:13px;margin-top:-8px">Promo code</label>
+                            </div>
+                            <span>Apply offer</span>
+                        </div>
+                        <button class="btn btn-warning">Pay 5,370 EGP</button>
+                    </div>
+                    <div class="payment-plans-container">
+                        <div class="header">Annually Plan</div>
+                        <div class="price">1,590</div>
+                        <hr class="between">
+                        <li>Billed as 19,080 / Month</li>
+                        <li>Consist of 1 payment</li>
+                        <li>Total fees 19.080 EGP</li>
+                        <hr class="between">
+                        <div class="offer-container">
+                            <div class="form-floating">
+                                <input type="text" style="height: 30px;font-size:13px;" class="form-control" id="Promo_input" placeholder="studentName">
+                                <label for="Promo_input" style="opacity:0.5;font-size:13px;margin-top:-8px">Promo code</label>
+                            </div>
+                            <span>Apply offer</span>
+                        </div>
+                        <button class="btn btn-warning">Pay 19.080 EGP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+</div>
     </div>
 
     <script src="js/jquery.min.js"></script>

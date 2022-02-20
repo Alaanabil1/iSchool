@@ -49,7 +49,49 @@
 .header img {
     height: 35px;
 }
-
+.scheduletablehead{
+    font-weight: bold;
+    color: #2c2c2c70;
+   padding-bottom: 10px !important;
+}
+.scheduletableitem{
+    margin: 10px 0 !important;
+    background-color: #F6F6F6;
+    box-shadow: 0px 0px 10px 0px #00000005;
+border-radius: 5px;
+padding: 10px 0 !important;
+cursor: pointer;
+transition: 300ms;
+}
+.scheduletableitem:hover,
+.scheduletableitem.active{
+background-color: var(--orange-color);
+color: white;
+}
+.scheduletableitem .check{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #2c2c2c50;
+    display: block;
+    margin: auto;
+    border-radius: 100%;
+    position: relative;
+}
+.scheduletableitem .check.active{
+    position: relative;
+}
+.scheduletableitem .check.active::after{
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 10px;
+    content: "\f111";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--orange-color);
+}
 body {
     overflow-x: hidden;
 }
@@ -235,6 +277,115 @@ body {
     display: block;
     width: 70%;
 }
+
+.student-payment-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.student-payment-info .student-payment-labels {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.student-payment-info .student-payment-labels span {
+    margin: 0px 30px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container {
+    width: 250px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #2C2C2C33;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+}
+
+.payment-plans-container .header {
+    background-color: #1955CC;
+    border-radius: 10px 10px 0 0;
+    color: white;
+    height: 45px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.btn.next{
+    margin: auto;
+    display: block;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.payment-plans-container .between {
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.payment-plans-container li {
+    margin-left: 15px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container .price {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+}
+
+.payment-plans-container .offer-container {
+    display: flex;
+    padding: 15px;
+    padding-top: 0px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.payment-plans-container .offer-container span {
+    font-size: 13px;
+    color: var(--blue-color);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.payment-plans-container button {
+    background-color: #FD7D00;
+    color: white;
+    margin: auto;
+    display: block;
+}
+
+.payment-plans-container .price::before {
+    content: 'EGP';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    margin-left: -70px;
+    margin-top: -10px;
+}
+
+.payment-plans-container .price::after {
+    content: '/ Month';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    bottom: -15px;
+    margin-right: -70px;
+    margin-top: -10px;
+}
+
 .dropdown {
     width: 50%;
 }
@@ -308,6 +459,16 @@ input.form-control{
     padding-left: 30px;
     color: #2c2c2c80;
 }
+.btn.signup{
+        margin: auto;
+        display: block;
+        width: 200px;
+        margin-top: 20px;
+}
+hr{
+    line-height: 20px;
+}
+
 @media screen and (max-width: 1150px) {
     .row.mb-3.country{
         width: 50% !important;
@@ -367,5 +528,6 @@ input.form-control{
         padding-top: 15px !important;
         padding-left: 10px !important;
     }
+   
     
 }

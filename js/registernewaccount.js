@@ -21,3 +21,23 @@ $("#countryInput1").keyup(function () {
 $(".country ul li").click(function(){
     $("#countryInput1").val($(this).html())
 })
+$(".btn.signup").click(function(){
+    $(".step01").hide("blind", { direction: "right" } ,300);
+    setTimeout(function(){
+        $(".step02").show("blind", { direction: "left" } ,300); 
+    },400)
+})
+
+$(".scheduletableitem").click(function(){
+    $(".scheduletableitem").removeClass("active");
+    $(".check").removeClass("active");
+    $(this).addClass("active");
+    Num = $(this).index();
+    $(".scheduletableitem:nth-child(" + (Num +1 )+") .check").addClass("active")
+})
+$(".btn.next").click(function(){
+    $(".step02").hide("blind", { direction: "right" } ,300);
+    setTimeout(function(){
+        $(".step03").show("blind", { direction: "left" } ,300); 
+    },400)
+})
