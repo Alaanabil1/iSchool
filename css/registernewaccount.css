@@ -165,7 +165,10 @@ body {
         background-position: 0% 50%;
     }
 }
-
+.row{
+    margin: 0;
+    padding: 0;
+}
 .right-align {
     justify-content: right;
 }
@@ -187,10 +190,23 @@ body {
     opacity: 0.8;
     margin-top: -15px;
     text-decoration: underline;
+    cursor: pointer;
+    transition: 300ms;
+    letter-spacing: 0;
+}
+.headding p:hover{
+    color: var(--blue-color);
+    letter-spacing: 1px;
 }
 
-html {
-    overflow-x: hidden;
+.ms-dd-header{
+    background-color: white;
+}
+.ms-dd-header a{
+    white-space: nowrap;
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+    background-color: white !important;
 }
 
 .opt {
@@ -199,13 +215,119 @@ html {
     height: 100%;
     overflow-x: none;
 }
-
+.twosides .form-floating{
+    width: 50%;
+}
+.row.body{
+    height: auto;
+    margin-right: 0;
+}
+.form{
+    padding-left: 60px;
+}
+.col.picture{
+    padding: 0;
+    margin: 0;
+}
+.col.picture img{
+    right: 0px;
+    margin-left: auto;
+    display: block;
+    width: 70%;
+}
+.dropdown {
+    width: 50%;
+}
+.row.headding{
+    margin-right: 0;
+}
+.title-right{
+    font-size: 4.5vw;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 70px;
+    margin: auto;
+    display: block;
+    width: 70%;
+}
+.title-right b{
+    color: var(--orange-color);
+}
+.dropdown button{
+    background-color: white ;
+    color: var(--black-color);
+    width: 100%;
+    transition: 300ms;
+    height: 80%;
+    border: #2c2c2c30 0.5px solid;
+}
+.dropdown button:hover,
+.dropdown button:focus{
+    background-color: var(--blue-color);
+}
+.dropdown ul{
+    max-height: 270px;
+    overflow-x: auto;
+    width: 95%;
+}
+.ms-dd{
+    background-color: transparent !important;
+    width: 100% !important;
+    display: block !important;
+}
+.ms-dd .ms-options{
+    width: 95% !important;
+}
+.ms-list-option.option-selected{
+    height: 100% !important;
+}
+.ms-dd .ms-dd-header{
+    height: 100% !important;
+}
+.country-menu{
+    background-color: white;
+    border: 1px solid #2C2C2C26;
+    box-shadow: 0px 4px 4px 0px #0000000A;
+    margin-top: 0px;
+    max-height: 270px;
+    overflow-x: auto;
+    display: none;
+}
+.country-menu li{
+    list-style: none;
+}
+input.form-control{
+    padding: 0 30px;
+    color: #2c2c2c;
+}
+.twosides{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.form-floating label{
+    padding-left: 30px;
+    color: #2c2c2c80;
+}
 @media screen and (max-width: 1150px) {
+    .row.mb-3.country{
+        width: 50% !important;
+        padding-right: 0;
+    }
     .header {
         display: none;
     }
     .mobile-header {
         display: flex;
+    }
+    .col.picture{
+        display: none;
+    }
+    .form{
+        padding: 0 20px;
+    }
+    .row.mb-3.country{
+        margin-right: 0;
+        padding-right: 0;
     }
 }
 
@@ -215,8 +337,35 @@ html {
     }
     .headding h1 {
         font-size: 30px;
+        padding: 0 60px;
     }
     .headding p {
         font-size: 13px;
     }
+    .form div{
+        font-size: 12px;
+    }
+    .form div.row{
+        margin-bottom: 0px;
+    }
+    .form-floating{
+        margin-bottom: 10px !important;
+        height: 45px;
+    }
+    .form-floating .form-control{
+        height: 40px;
+        font-size: 13px;
+        padding: 1.5rem 0.75rem;
+
+    }  .form-floating label{
+        margin-top: -12px;
+        margin-left: -10px;
+        padding: 1.3rem 1.75rem;
+    }
+    .ms-dd-header a{
+        white-space: nowrap;
+        padding-top: 15px !important;
+        padding-left: 10px !important;
+    }
+    
 }
