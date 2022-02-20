@@ -289,9 +289,9 @@ body {
 
 .col.picture img {
     right: 0px;
-    margin-left: auto;
+    margin: auto;
     display: block;
-    width: 70%;
+    width: 60%;
     animation: pulse 2s infinite ease-in-out alternate;
 }
 
@@ -429,14 +429,14 @@ body {
 }
 
 .title-right {
-    font-size: 4.0vw;
+    font-size: 3.0vw;
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 70px;
     margin: auto;
     display: block;
     width: 70%;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .title-right b {
@@ -542,9 +542,57 @@ hr {
         margin-right: 0;
         padding-right: 0;
     }
+    .step03 .col.picture {
+        display: block;
+    }
+    .step03 .row.body {
+        display: block;
+    }
+    .step03 .col.picture,
+    .step03 .col.form {
+        padding: 10px !important;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .step03 .col.form {
+        padding: 0 !important;
+    }
 }
 
 @media screen and (max-width: 500px) {
+    .step03 .col.form .card span.col {
+        font-size: 20px !important;
+    }
+    .step03 .col.form .card span.col-auto {
+        font-size: 50px !important;
+    }
+    .step03 .row.mb-3 {
+        display: block !important;
+        position: relative;
+    }
+    .step03 .row.mb-3 .col {
+        font-size: 15px !important;
+    }
+    .step03 .row.mb-3:nth-child(3) {
+        margin-top: 20px;
+    }
+    .step03 .row.mb-3:nth-child(3)::before {
+        content: '';
+        background-color: #2c2c2c20;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        top: -10px;
+    }
+    .step03 .row.mb-3::after {
+        content: '';
+        background-color: #2c2c2c20;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: -10px;
+    }
     .coontent-container {
         margin-top: 20px;
     }
@@ -579,6 +627,10 @@ hr {
         white-space: nowrap;
         padding-top: 15px !important;
         padding-left: 10px !important;
+    }
+    .step03 .col.picture,
+    .step03 .col.form {
+        padding: 10px !important;
     }
 }
 
