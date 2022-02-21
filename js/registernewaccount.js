@@ -47,3 +47,15 @@ $(".payment-plans-container button").click(function() {
         $(".step04").show("drop", { direction: "left" }, 300);
     }, 400)
 })
+$(".step02 .back").click(function() {
+    $(".step02").hide("drop", { direction: "left" }, 300);
+    setTimeout(function() {
+        $(".step01").show("drop", { direction: "right" }, 300);
+    }, 400)
+})
+$(".step03 .back").click(function() {
+    $(".step03").hide("drop", { direction: "left" }, 300);
+    setTimeout(function() {
+        $(".step02").show("drop", { direction: "right" }, 300);
+    }, 400)
+})

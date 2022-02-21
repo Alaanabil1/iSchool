@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/dashboard_parent.css">
+    <link rel="stylesheet" href="css/finance_parent.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;700;900&family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/finance_parent.css">
     <title>Parent Dashboard</title>
 </head>
 
@@ -26,7 +26,7 @@
 
         </div>
     </div>
-    <div class="container-fluid reset-margin">
+    <div class="container-fluid" style="margin: 0;padding:0;">
         <div class="blackoverlay"><i class="fa-solid fa-xmark close-noti"></i></div>
         <div class="messanger" title="Contact Us"><i class="fa-brands fa-facebook-messenger"></i></div>
         <div class="chat-container">
@@ -60,8 +60,8 @@
 
             <!-- End text chat -->
         </div>
-        <div class="row layout">
-            <div class="left-navigation col-auto">
+        <div class="row layout" style="margin: 0;">
+            <div class="left-navigation col-auto" style="padding:0 ;">
                 <div class="fixed-nav-position">
                     <a href="#" title="Back to iSchool Homepage">
                         <div class="logo"></div>
@@ -69,7 +69,7 @@
                     <hr>
                     <div class="nav-joinsession">
                         <ul class="nav-conatainer">
-                            <li class="nav-item">
+                            <li class="nav-item ">
                                 <div class="nav-icon"><i class="fa-solid fa-book"></i></div>
                                 <div class="nav-item-title">Learning Path</div>
                             </li>
@@ -96,22 +96,190 @@
                         <input type="text">
                         <div class="filter"></div>
                     </div>
+                    <div class="col">
+                        <div class="account-icons">
+                            <div class="logo_mob" style="margin-right: auto;"></div>
+                            <div class="noftifcation_icon"><i class="fa-solid fa-bell"></i>
+                                <ul class="notification-container">
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    <li class="notification-item">
+                                        <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                </ul>
+                            </div>
+                            <div class="account_pic"><img src="img/img.jpg" alt="">
+                            </div>
+                            <div class="account-info-container">
+                                <div class="row account-info-first">
+                                    <div class="col-auto">
+                                        <div class="account_pic">
+                                            <img src="img/img.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span class="info-items">Client Name</span>
+                                        <span class="info-items">Clientemail@email.com</span>
+                                    </div>
+                                </div>
 
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary">View Profile</button>
+                                </div>
+                                <hr>
+                                <li class="account-info-item"><i class="fa-solid fa-circle-question"></i> Support </li>
+                                <li class="account-info-item"><i class="fa-solid fa-right-from-bracket"></i> Sign Out </li>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;" class="tabs-adj">
+                    <div class="col tabs-container">
+                        <nav class="tabs">
+                            <ul>
+                                <li class="active" data-tab="tab-1">All</li>
+                                <li data-tab="tab-2">Student 01</li>
+                                <li data-tab="tab-3">Student 02</li>
+                                <li data-tab="tab-4">Student 02</li>
+                                <li class="view-all-tabs">View all</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <button style="font-size: 12px; height:40px;" class=" col-auto btn btn-primary addstudent"><i class="fa-solid fa-plus"></i> <a>Add Student</a></button>
                 </div>
 
-                <div class="row top-nav" style="padding-right: 90px;">
-                    <ul class="pages-navigation">
-                        <li class="pages-link active All">All</li>
-                        <li class="pages-link">Student 01</li>
-                        <li class="pages-link ">Student 02</li>
-                        <li class="pages-link ">Student 03</li>
-                        <li class="pages-link ">View All</li>
-                        <button style="font-size: 12px;" class="btn btn-primary addstudent"><i class="fa-solid fa-plus"></i> <a>Add Student</a></button>
-                    </ul>
-                    <hr>
-                </div>
+
+
                 <div class=".col-sm- content-container body">
+                    <div data-issue="" class="comp_container invoices-cont" style="padding: 20px;">
+                        <div class="headding">
+                            <div class="head">
+                                Invoices
+                            </div>
+                            <div class="btn btn-primary">
+                                View All
+                            </div>
+                        </div>
+                        <table class="invoices-table">
 
+                            <thead>
+                                <tr>
+                                    <th scope="col">Description</th>
+                                    <th scope="col-auto">Pay For</th>
+                                    <th scope="col-auto">Date</th>
+                                    <th scope="col-auto">Amount</th>
+                                    <th scope="col-auto">Status</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Description"> Description Description Description Des Description </td>
+                                    <td data-label="Pay For">STUDENT 01</td>
+                                    <td data-label="Date">10/10/2010</td>
+                                    <td data-label="Amount">2,000 EGP</td>
+                                    <td data-label="Status" class="duepay">DUE & PAYABLE</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Description"> Description Description Description Des Description </td>
+                                    <td data-label="Pay For">STUDENT 01</td>
+                                    <td data-label="Date">10/10/2010</td>
+                                    <td data-label="Amount">2,000 EGP</td>
+                                    <td data-label="Status" class="duepay">DUE & PAYABLE</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Description"> Description Description Description Des Description </td>
+                                    <td data-label="Pay For">STUDENT 01</td>
+                                    <td data-label="Date">10/10/2010</td>
+                                    <td data-label="Amount">2,000 EGP</td>
+                                    <td data-label="Status" class="due">DUE</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Description"> Description Description Description Des Description </td>
+                                    <td data-label="Pay For">STUDENT 01</td>
+                                    <td data-label="Date">10/10/2010</td>
+                                    <td data-label="Amount">2,000 EGP</td>
+                                    <td data-label="Status" class="due">DUE</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Description"> Description Description Description Des Description </td>
+                                    <td data-label="Pay For">STUDENT 01</td>
+                                    <td data-label="Date">10/10/2010</td>
+                                    <td data-label="Amount">2,000 EGP</td>
+                                    <td data-label="Status" class="due">DUE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button data-save="20%" style="margin-left:auto; display:block; margin-top:30px;font-size:25px;" class="btn btn-warning">Pay <a>5,400</a> once</button>
+
+
+                    </div>
+                    <div data-issue="" class="comp_container Packages-cont" style="padding: 20px;">
+                        <div class="headding">
+                            <div class="head">
+                                Packages
+                            </div>
+                            <div class="btn btn-primary">
+                                View more
+                            </div>
+                        </div>
+                        <table class="invoices-table">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Kids</th>
+                                    <th scope="col-auto">Quota</th>
+                                    <th scope="col-auto">Used</th>
+                                    <th scope="col-auto">Remain</th>
+                                    <th scope="col-auto">Status</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Kids">STUDENT 01</td>
+                                    <td data-label="Quota">50 Sessions</td>
+                                    <td data-label="Used">30 Sessions</td>
+                                    <td data-label="Remain">20 Sessions</td>
+                                    <td data-label="Status">Active</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Kids">STUDENT 01</td>
+                                    <td data-label="Quota">50 Sessions</td>
+                                    <td data-label="Used">30 Sessions</td>
+                                    <td data-label="Remain">20 Sessions</td>
+                                    <td data-label="Status">Active</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Kids">STUDENT 01</td>
+                                    <td data-label="Quota">50 Sessions</td>
+                                    <td data-label="Used">30 Sessions</td>
+                                    <td data-label="Remain">20 Sessions</td>
+                                    <td data-label="Status">Active</td>
+                                </tr>
+                                <tr class="invoices-table-item">
+                                    <td data-label="Kids">STUDENT 01</td>
+                                    <td data-label="Quota">50 Sessions</td>
+                                    <td data-label="Used">30 Sessions</td>
+                                    <td data-label="Remain">20 Sessions</td>
+                                    <td data-label="Status">Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,7 +291,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/global.js"></script>
-    <script src="js/dashboard_parent.js"></script>
     <script src="js/finance_parent.js"></script>
 
 </body>

@@ -582,6 +582,10 @@ hr {
     }
 }
 
+.back {
+    cursor: pointer;
+}
+
 @keyframes pulse {
     from {
         transform: scale(0.8);

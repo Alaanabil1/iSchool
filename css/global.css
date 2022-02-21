@@ -502,6 +502,10 @@ hr {
     transition: 300ms;
 }
 
+.back {
+    cursor: pointer;
+}
+
 .notification-container .notification-item .noti_list_icon {
     opacity: 0.5;
     margin-right: 10px;
@@ -875,7 +879,10 @@ table th {
     }
 }
 
-@media screen and (max-width:570px) {
+@media screen and (max-width:800px) {
+    .chat-container {
+        bottom: 50px;
+    }
     .logo_mob {
         width: 100px;
         height: 35px;

@@ -1,0 +1,225 @@
+:root {
+    --blue-color: #1955CC;
+    --orange-color: #FD7D00;
+    --black-color: #2c2c2c;
+}
+
+.top-nav .pages-navigation .menu {
+    display: flex;
+}
+
+.Packages-cont .headding,
+.invoices-cont .headding {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs-adj {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+@media screen and (max-width:570px) {
+    .top-nav .addstudent {
+        margin-left: auto;
+        margin-right: 40px;
+    }
+    .addstudent a {
+        display: none;
+    }
+    .invoices-cont button {
+        margin: auto;
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+
+/* tabs */
+
+.tabs-container nav {
+    background: #fff;
+}
+
+.tabs-container nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+.tabs-container nav ul li {
+    padding: 1rem;
+    cursor: pointer;
+    color: #a7a7a7;
+    border-top: 1px solid #eee;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 25px;
+}
+
+.tabs-container nav ul li:hover {
+    color: #3e4b58;
+}
+
+.tabs-container nav ul li.active {
+    color: #3e4b58;
+    border-top: none;
+}
+
+
+/* the nitty gritty */
+
+.tabs-container {
+    position: relative;
+    height: 4em;
+    display: flex;
+    align-items: center;
+}
+
+.tabs-container nav {
+    position: absolute;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.tabs-container nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-container nav ul li {
+    order: 1;
+}
+
+.tabs-container nav ul li.active {
+    order: 0;
+}
+
+.tabs-container nav ul li.active:after {
+    width: 1px;
+    height: 1px;
+    border: 5px solid transparent;
+    border-top: 5px solid #555;
+    content: "";
+    position: absolute;
+    right: 1.5em;
+    top: 1.4em;
+    z-index: 9999;
+}
+
+.tabs-container nav ul li:not(.active) {
+    position: absolute;
+    top: -999em;
+}
+
+.due {
+    color: var(--orange-color);
+}
+
+.duepay {
+    color: red;
+}
+
+.btn-warning {
+    background-color: var(--orange-color);
+    color: white;
+}
+
+.btn-warning:hover {
+    color: white;
+}
+
+.invoices-cont button {
+    position: relative;
+}
+
+.invoices-cont button::before {
+    content: 'Save ' ' ' attr(data-save);
+    position: absolute;
+    color: green;
+    top: -25px;
+    font-size: 15px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.tabs-container nav ul.expanded li.active:after {
+    border-top-color: transparent;
+    border-bottom-color: #555;
+    top: 1em;
+}
+
+.tabs-container nav ul.expanded li:not(.active) {
+    position: relative;
+    top: auto;
+}
+
+.tabs-container nav {
+    background: transparent;
+    width: 100%;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+}
+
+.tabs-container nav {
+    background: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    z-index: 10;
+}
+
+@media screen and (min-width: 780px) {
+    .tabs-container nav {
+        background: transparent;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    .tabs-container nav ul li.active {
+        box-shadow: inset 0 -3px 0 var(--blue-color);
+    }
+    .tabs-container nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        align-items: center;
+        padding: 0;
+        /* height: 120px; */
+    }
+    .tabs-container nav ul li {
+        display: inline-block;
+        margin: 0 1rem 0 1rem;
+        padding: 0 0 0.1rem 0;
+        border: none;
+    }
+    .tabs-container nav ul li:not(.active) {
+        position: relative;
+        top: auto;
+    }
+    .tabs-container nav ul li.active {
+        order: 1;
+    }
+    .tabs-container nav ul li.active:after {
+        display: none;
+    }
+}
+
+.tab-content {
+    display: none;
+    padding: 15px;
+}
+
+.tab-content.current {
+    display: inherit;
+}

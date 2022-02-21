@@ -560,6 +560,10 @@ hr {
     }
 }
 
+.back {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 500px) {
     .step03 .col.form .card span.col {
         font-size: 20px !important;
