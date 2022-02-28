@@ -301,14 +301,27 @@ function AddstudentClicks() {
     $(".expandsession.back").click(function() {
         sessions();
     })
-
-
+    $(".invoices-viewall").click(function() {
+        invoicesexpand();
+    })
+    $(".invoices-back").click(function() {
+        financeHome();
+    })
+    $('.packages-back').click(function() {
+        financeHome();
+    })
+    $(".packages-viewall").click(function() {
+        packagesExpand();
+    })
+    $(".invoices-table-item").click(function() {
+        singleInvoce();
+    })
 }
 $(".addstudent").click(function() {
     addNewstudent();
 })
-$(document).on('click', 'li', function() {
-    $('li').removeClass('active');
+$(document).on('click', '.stli', function() {
+    $('.stli').removeClass('active');
     $('ul').toggleClass('expanded');
     $(this).addClass('active');
     var tab_id = $(this).attr('data-tab');
@@ -316,3 +329,483 @@ $(document).on('click', 'li', function() {
     $(this).addClass('current');
     $('#' + tab_id).addClass('current');
 });
+
+function financeHome() {
+    $(".content-container.body").html(`  <div data-issue="" class="comp_container invoices-cont" style="padding: 20px;">
+    <div class="headding">
+        <div class="head">
+            Invoices
+        </div>
+        <div class="btn btn-primary invoices-viewall">
+            View All
+        </div>
+    </div>
+    <table class="invoices-table">
+
+        <thead>
+            <tr>
+                <th scope="col">Description</th>
+                <th scope="col-auto">Pay For</th>
+                <th scope="col-auto">Date</th>
+                <th scope="col-auto">Amount</th>
+                <th scope="col-auto">Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="invoices-table-item">
+                <td data-label="Description"> Description Description Description Des Description </td>
+                <td data-label="Pay For">STUDENT 01</td>
+                <td data-label="Date">10/10/2010</td>
+                <td data-label="Amount">2,000 EGP</td>
+                <td data-label="Status" class="duepay">DUE & PAYABLE</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Description"> Description Description Description Des Description </td>
+                <td data-label="Pay For">STUDENT 01</td>
+                <td data-label="Date">10/10/2010</td>
+                <td data-label="Amount">2,000 EGP</td>
+                <td data-label="Status" class="duepay">DUE & PAYABLE</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Description"> Description Description Description Des Description </td>
+                <td data-label="Pay For">STUDENT 01</td>
+                <td data-label="Date">10/10/2010</td>
+                <td data-label="Amount">2,000 EGP</td>
+                <td data-label="Status" class="due">DUE</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Description"> Description Description Description Des Description </td>
+                <td data-label="Pay For">STUDENT 01</td>
+                <td data-label="Date">10/10/2010</td>
+                <td data-label="Amount">2,000 EGP</td>
+                <td data-label="Status" class="due">DUE</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Description"> Description Description Description Des Description </td>
+                <td data-label="Pay For">STUDENT 01</td>
+                <td data-label="Date">10/10/2010</td>
+                <td data-label="Amount">2,000 EGP</td>
+                <td data-label="Status" class="due">DUE</td>
+            </tr>
+        </tbody>
+    </table>
+    <button data-save="20%" style="margin-left:auto; display:block; margin-top:40px;font-size:25px;" class="btn btn-warning">Pay <a>5,400</a> once</button>
+
+
+</div>
+<div data-issue="" class="comp_container Packages-cont" style="padding: 20px;">
+    <div class="headding">
+        <div class="head">
+            Packages
+        </div>
+        <div class="btn btn-primary packages-viewall">
+            View more
+        </div>
+    </div>
+    <table class="invoices-table">
+
+        <thead>
+            <tr>
+                <th scope="col">Kids</th>
+                <th scope="col-auto">Quota</th>
+                <th scope="col-auto">Used</th>
+                <th scope="col-auto">Remain</th>
+                <th scope="col-auto">Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<div data-issue="" class="comp_container statistics-container" style="padding: 20px;">
+    <div class="headding">
+
+        Statistics
+
+    </div>
+
+    <div class="statistics-cont">
+        <div class="statistics-comp">
+            <div class="title">Total Fees</div>
+            <span>
+            
+            <div class="price">30,000</div>
+        </span>
+        </div>
+        <div class="statistics-comp">
+            <div class="title">TOTAL DISCOUNT</div>
+            <span>
+            
+            <div class="price">5,000</div>
+        </span>
+        </div>
+        <div class="statistics-comp">
+            <div class="title">PAID AMOUNT</div>
+            <span class="green">
+            
+            <div class="price">24,000</div>
+        </span>
+        </div> 
+        
+        <div class="statistics-comp">
+            <div class="title">DUE AMOUNT</div>
+            <span class="red">
+            <div class="price">6,000</div>
+        </span>
+        </div>
+
+
+    </div>
+    `);
+    AddstudentClicks();
+
+}
+
+function invoicesexpand() {
+    $(".content-container.body").html(`    <div class="back invoices-back"><i class="fa-solid fa-arrow-left"></i></div>
+    <div class="headding">
+        All Invoices
+    </div>
+    <button data-save="20%" style="margin-left:auto; display:block; margin-top:40px;font-size:25px;" class="btn btn-warning">Pay <a>5,400</a> once</button>
+
+    <table class="invoices-table">
+
+        <thead>
+            <tr>
+                <th scope="col">Kids</th>
+                <th scope="col-auto">Quota</th>
+                <th scope="col-auto">Used</th>
+                <th scope="col-auto">Remain</th>
+                <th scope="col-auto">Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="invoices-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <nav aria-label="...">
+        <ul style="justify-content:center; margin-top:20px" class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item ">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>`);
+    AddstudentClicks();
+}
+
+function packagesExpand() {
+    $(".content-container.body").html(` <div class="headding">
+
+    <div class="back packages-back"><i class="fa-solid fa-arrow-left"></i></div>
+    <br>
+    <div class="head">
+        Packages
+
+    </div>
+    <br>
+    <table class="invoices-table">
+
+        <thead>
+            <tr>
+                <th scope="col">Kids</th>
+                <th scope="col-auto">Quota</th>
+                <th scope="col-auto">Used</th>
+                <th scope="col-auto">Remain</th>
+                <th scope="col-auto">Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+            <tr class="package-table-item">
+                <td data-label="Kids">STUDENT 01</td>
+                <td data-label="Quota">50 Sessions</td>
+                <td data-label="Used">30 Sessions</td>
+                <td data-label="Remain">20 Sessions</td>
+                <td data-label="Status">Active</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <nav aria-label="...">
+        <ul style="justify-content:center; margin-top:20px" class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item ">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div> `);
+    AddstudentClicks();
+}
+
+function singleInvoce() {
+    $(".addstudent-pop .content-container").attr("data-page", "invoice-expand");
+    $(".popup").show("fast");
+    $(".addstudent-pop .content-container").html(`  <div class="close"><i class="fa-solid fa-xmark"></i></div>
+    <div class="container invoices">
+        <div class="row">
+            <div class="col-md col-md-offset-3 body-main">
+                <div class="col-md-12">
+                    <div class="row logo">
+                        <img style="width:150px" class="img" alt="Invoce Template" src="img/blue-logo.svg" />
+
+                    </div> <br />
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>INVOICE</h2>
+                            <h5>04854654101</h5>
+                            <div class="row invoice-details">
+                                <div class="col-sm">
+                                    <h5>Student name : Mohamed Ali klay</h5>
+                                </div>
+                                <div class="col-sm">
+                                    <h5>Parent name : Mohamed Ali klay</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> <br />
+                    <div>
+                        <table class="table-sm">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h5>Description</h5>
+                                    </th>
+                                    <th>
+                                        <h5>Amount</h5>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-9">Samsung Galaxy 8 64 GB</td>
+                                    <td class="col-md-3">
+                                        50,000 L.E </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9">JBL Bluetooth Speaker</td>
+                                    <td class="col-md-3">
+                                        5,200 L.E </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9">Apple Iphone 6s 16GB</td>
+                                    <td class="col-md-3">
+                                        25,000 L.E </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-9">MI Smartwatch 2</td>
+                                    <td class="col-md-3">
+                                        2,200 L.E </td>
+                                </tr>
+
+                                <tr style="color: #1955CC;">
+                                    <td class="text-center">
+                                        <h4><strong>Total:</strong></h4>
+                                    </td>
+                                    <td class="text-center">
+                                        <h4><strong> </i> 79,900 </strong></h4>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="col-md-12">
+                            <p><b>Date :</b> 6 June 2019</p> <br />
+                            <p><b>Signature</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+`)
+    addNewstudent();
+}
+financeHome();

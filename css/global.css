@@ -652,6 +652,10 @@ hr {
     transition: 300ms;
 }
 
+a {
+    text-decoration: none;
+}
+
 .account-info-container {
     position: absolute;
     top: 90px;
@@ -661,6 +665,31 @@ hr {
     border: 0.5px solid #0000001A;
     box-shadow: 0px 0px 10px 0px #00000012;
     padding: 20px;
+}
+
+.commingsoon {
+    position: relative;
+}
+
+.commingsoon::after {
+    font-family: "Font Awesome 5 Free";
+    background-color: #2c2c2c80;
+    backdrop-filter: blur(8px);
+    font-weight: 900;
+    width: 100%;
+    content: '\f023';
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.commingsoon:hover {
+    display: none;
 }
 
 .account-info-container .account_pic {
@@ -833,6 +862,22 @@ table th {
 }
 
 @media screen and (max-width:1050px) {
+    .commingsoon::after {
+        background-color: #2c2c2c90;
+        backdrop-filter: blur(8px);
+        width: 100%;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f023";
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .nav-item-title {
         display: none;
     }
@@ -927,6 +972,7 @@ table th {
     .left-navigation .nav-conatainer li {
         height: 50px;
         text-align: center;
+        margin-right: 20px;
     }
     .left-navigation .nav-conatainer li.active::after {
         display: none;

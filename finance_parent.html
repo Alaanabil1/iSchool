@@ -69,22 +69,28 @@
                     <hr>
                     <div class="nav-joinsession">
                         <ul class="nav-conatainer">
-                            <li class="nav-item ">
-                                <div class="nav-icon"><i class="fa-solid fa-book"></i></div>
-                                <div class="nav-item-title">Learning Path</div>
-                            </li>
-                            <li class="nav-item active">
-                                <div class="nav-icon"><i class="fa-solid fa-coins"></i></div>
-                                <div class="nav-item-title">Finance</div>
-                            </li>
-                            <li class="nav-item">
+                            <a href="/dashboard_parent.html">
+                                <li class="nav-item">
+
+                                    <div class="nav-icon"><i class="fa-solid fa-book"></i></div>
+                                    <div class="nav-item-title">Learning Path</div>
+
+                                </li>
+                            </a>
+                            <a href="/finance_parent.html">
+                                <li class="nav-item active">
+                                    <div class="nav-icon"><i class="fa-solid fa-coins"></i></div>
+                                    <div class="nav-item-title">Finance</div>
+                                </li>
+                            </a>
+                            <li class="nav-item commingsoon">
                                 <div class="nav-icon"><i class="fa-solid fa-store"></i></div>
                                 <div class="nav-item-title">Store</div>
                             </li>
 
                         </ul>
                         <hr>
-                        <div class="join-session"><button class="button-48" role="button"><span class="text">Join Session </span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></div>
+                        <div class="join-session"><button class="button-48" role="button"><i style="font-size: 15px;" class="fa-solid fa-gem"></i><span class="text"> Upgrade </span> </button></div>
                     </div>
                 </div>
             </div>
@@ -146,11 +152,11 @@
                     <div class="col tabs-container">
                         <nav class="tabs">
                             <ul>
-                                <li class="active" data-tab="tab-1">All</li>
-                                <li data-tab="tab-2">Student 01</li>
-                                <li data-tab="tab-3">Student 02</li>
-                                <li data-tab="tab-4">Student 02</li>
-                                <li class="view-all-tabs">View all</li>
+                                <li class="stli active" data-tab="tab-1">All</li>
+                                <li class="stli" data-tab="tab-2">Student 01</li>
+                                <li class="stli" data-tab="tab-3">Student 02</li>
+                                <li class="stli" data-tab="tab-4">Student 02</li>
+                                <li class="stli" class="view-all-tabs">View all</li>
                             </ul>
                         </nav>
                     </div>
@@ -160,129 +166,11 @@
 
 
                 <div class=".col-sm- content-container body">
-                    <div data-issue="" class="comp_container invoices-cont" style="padding: 20px;">
-                        <div class="headding">
-                            <div class="head">
-                                Invoices
-                            </div>
-                            <div class="btn btn-primary">
-                                View All
-                            </div>
-                        </div>
-                        <table class="invoices-table">
 
-                            <thead>
-                                <tr>
-                                    <th scope="col">Description</th>
-                                    <th scope="col-auto">Pay For</th>
-                                    <th scope="col-auto">Date</th>
-                                    <th scope="col-auto">Amount</th>
-                                    <th scope="col-auto">Status</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Description"> Description Description Description Des Description </td>
-                                    <td data-label="Pay For">STUDENT 01</td>
-                                    <td data-label="Date">10/10/2010</td>
-                                    <td data-label="Amount">2,000 EGP</td>
-                                    <td data-label="Status" class="duepay">DUE & PAYABLE</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Description"> Description Description Description Des Description </td>
-                                    <td data-label="Pay For">STUDENT 01</td>
-                                    <td data-label="Date">10/10/2010</td>
-                                    <td data-label="Amount">2,000 EGP</td>
-                                    <td data-label="Status" class="duepay">DUE & PAYABLE</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Description"> Description Description Description Des Description </td>
-                                    <td data-label="Pay For">STUDENT 01</td>
-                                    <td data-label="Date">10/10/2010</td>
-                                    <td data-label="Amount">2,000 EGP</td>
-                                    <td data-label="Status" class="due">DUE</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Description"> Description Description Description Des Description </td>
-                                    <td data-label="Pay For">STUDENT 01</td>
-                                    <td data-label="Date">10/10/2010</td>
-                                    <td data-label="Amount">2,000 EGP</td>
-                                    <td data-label="Status" class="due">DUE</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Description"> Description Description Description Des Description </td>
-                                    <td data-label="Pay For">STUDENT 01</td>
-                                    <td data-label="Date">10/10/2010</td>
-                                    <td data-label="Amount">2,000 EGP</td>
-                                    <td data-label="Status" class="due">DUE</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button data-save="20%" style="margin-left:auto; display:block; margin-top:30px;font-size:25px;" class="btn btn-warning">Pay <a>5,400</a> once</button>
-
-
-                    </div>
-                    <div data-issue="" class="comp_container Packages-cont" style="padding: 20px;">
-                        <div class="headding">
-                            <div class="head">
-                                Packages
-                            </div>
-                            <div class="btn btn-primary">
-                                View more
-                            </div>
-                        </div>
-                        <table class="invoices-table">
-
-                            <thead>
-                                <tr>
-                                    <th scope="col">Kids</th>
-                                    <th scope="col-auto">Quota</th>
-                                    <th scope="col-auto">Used</th>
-                                    <th scope="col-auto">Remain</th>
-                                    <th scope="col-auto">Status</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Kids">STUDENT 01</td>
-                                    <td data-label="Quota">50 Sessions</td>
-                                    <td data-label="Used">30 Sessions</td>
-                                    <td data-label="Remain">20 Sessions</td>
-                                    <td data-label="Status">Active</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Kids">STUDENT 01</td>
-                                    <td data-label="Quota">50 Sessions</td>
-                                    <td data-label="Used">30 Sessions</td>
-                                    <td data-label="Remain">20 Sessions</td>
-                                    <td data-label="Status">Active</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Kids">STUDENT 01</td>
-                                    <td data-label="Quota">50 Sessions</td>
-                                    <td data-label="Used">30 Sessions</td>
-                                    <td data-label="Remain">20 Sessions</td>
-                                    <td data-label="Status">Active</td>
-                                </tr>
-                                <tr class="invoices-table-item">
-                                    <td data-label="Kids">STUDENT 01</td>
-                                    <td data-label="Quota">50 Sessions</td>
-                                    <td data-label="Used">30 Sessions</td>
-                                    <td data-label="Remain">20 Sessions</td>
-                                    <td data-label="Status">Active</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="js/jquery.min.js"></script>
