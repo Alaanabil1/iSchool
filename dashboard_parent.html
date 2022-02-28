@@ -169,12 +169,16 @@
                     <hr>
                 </div>
                 <div class=".col-sm- content-container body">
-
+                  
+                  <div id="test"> <ul>
+                         <li v-for="item in dataV" :key="index"> {{item.name }}  - {{item.role }} </li>
+                                 </ul>
+                </div> 
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="js/vue.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -182,7 +186,24 @@
     <script src="js/popper.min.js"></script>
     <script src="js/global.js"></script>
     <script src="js/dashboard_parent.js"></script>
-
+    <script src="/Database/admin.js"></script>
+    <script src="/Database/database_functions.js"></script>
+    <script src="/Database/help.js"></script>
+    <script>
+        var phplink = "https://operation.ischool-edu.com/fetch.php"
+        
+        var ahmed = GET_DATA_TABLES(phplink,"age")
+        var vm = new Vue({
+           
+            el: '#test',
+            props : ahmed.role,
+            data:function(){
+                return{
+                    dataV: ahmed
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

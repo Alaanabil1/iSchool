@@ -1,8 +1,8 @@
 $(".mobile-header .menu").click(function() {
-    $(".mobile-header .menucontainer").show("blind", { direction: "right" });
+    $(".menucontainer").show("blind", { direction: "right" });
 })
-$(".mobile-header .close").click(function() {
-    $(".mobile-header .menucontainer").hide("blind", { direction: "right" });
+$(".menucontainer .close").click(function() {
+    $(".menucontainer").hide("blind", { direction: "right" });
 })
 $("#countryInput1").click(function() {
     $(".country-menu").slideToggle("fast")

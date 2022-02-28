@@ -5,7 +5,7 @@ $(".View-more .fa-chevron-right").click(function() {
 })
 parent_clicks();
 generateStudentsmenu();
-overView();
+// overView();
 
 function resetStudents() {
     $(".students-container .Active").removeClass("Active")
