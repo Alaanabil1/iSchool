@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/dashboard_operation.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;700;900&family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <title>Operation Dashboard</title>
+</head>
+
+<body>
+    <div style="display:none;" class="popup addstudent-pop">
+
+        <div class="content-container" data-page=" ">
+
+        </div>
+    </div>
+    <div class="container-fluid reset-margin">
+        <div class="blackoverlay"><i class="fa-solid fa-xmark close-noti"></i></div>
+        <div class="messanger" title="Contact Us"><i class="fa-brands fa-facebook-messenger"></i></div>
+        <div class="chat-container">
+
+            <!-- list chat -->
+            <div class="chat-header">
+                <div class="col leftside">
+                    <div class="back-icon"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="assistant">iSchool Assistant</div>
+                </div>
+                <div class="col-auto">
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="chat-body" data-detect="1">
+                <li class="chat-choices-items" id="instructorIssue">I have problem with Instructor</li>
+                <li class="chat-choices-items" id="financeIssue">I have Finance problem</li>
+                <li class="chat-choices-items" id="supportIssue">I have problem with support agent</li>
+                <li class="chat-choices-items" id="sessionIssue">I have problem with session</li>
+                <li class="chat-choices-items" id="advice">Give us an advice</li>
+                <li class="chat-choices-items" id="goChat">Go to chat</li>
+            </div>
+            <div class="chat-footer">
+                <div class="chat-pagination">
+
+                </div>
+            </div>
+            <!-- End list chat -->
+            <!-- text chat -->
+
+            <!-- End text chat -->
+        </div>
+        <div class="row layout">
+            <div class="left-navigation col-auto">
+                <div class="fixed-nav-position">
+                    <a href="#" title="Back to iSchool Homepage">
+                        <div class="logo"></div>
+                    </a>
+                    <hr>
+                    <div class="nav-joinsession">
+                        <ul class="nav-conatainer">
+                            <div class="d-flex align-items-start">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="nav-link active" id="v-pills-Parent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Parent" type="button" role="tab" aria-controls="v-pills-Parent" aria-selected="true">Parent</button>
+                                    <button class="nav-link" id="v-pills-Student-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Student" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Student</button>
+                                    <button class="nav-link" id="v-pills-Instructors-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Instructors" type="button" role="tab" aria-controls="v-pills-Instructors" aria-selected="false">Instructors</button>
+                                    <button class="nav-link" id="v-pills-Employee-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Employee" type="button" role="tab" aria-controls="v-pills-Employee" aria-selected="false">Employee</button>
+                                    <button class="nav-link" id="v-pills-Curriculum-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Curriculum" type="button" role="tab" aria-controls="v-pills-Curriculum" aria-selected="false">Curriculum</button>
+                                    <button class="nav-link" id="v-pills-Groups-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Groups" type="button" role="tab" aria-controls="v-pills-Groups" aria-selected="false">Groups</button>
+                                    <button class="nav-link" id="v-pills-Schedule-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Schedule" type="button" role="tab" aria-controls="v-pills-Schedule" aria-selected="false">Schedule</button>
+                                </div>
+                        </ul>
+                        <hr>
+                        <div class="join-session"><button class="button-48" role="button"><i style="font-size: 15px;" class="fa-solid fa-gem"></i><span class="text"> Upgrade </span> </button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col right-side">
+
+                    <div class="right-header row align-items-center">
+                        <div class="search-bar col-auto">
+                            <div class="searchicon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input type="text">
+                            <div class="filter"></div>
+                        </div>
+                        <div class="col">
+                            <div class="account-icons">
+                                <div class="logo_mob" style="margin-right: auto;"></div>
+                                <div class="noftifcation_icon"><i class="fa-solid fa-bell"></i>
+                                    <ul class="notification-container">
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                        <li class="notification-item">
+                                            <div class="noti_list_icon"><i class="fa-solid fa-rss"></i></div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam in quasi dicta repellat </li>
+                                    </ul>
+                                </div>
+                                <div class="account_pic"><img src="img/img.jpg" alt="">
+                                </div>
+                                <div class="account-info-container">
+                                    <div class="row account-info-first">
+                                        <div class="col-auto">
+                                            <div class="account_pic">
+                                                <img src="img/img.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="info-items">Client Name</span>
+                                            <span class="info-items">Clientemail@email.com</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary">View Profile</button>
+                                    </div>
+                                    <hr>
+                                    <li class="account-info-item"><i class="fa-solid fa-circle-question"></i> Support </li>
+                                    <li class="account-info-item"><i class="fa-solid fa-right-from-bracket"></i> Sign Out </li>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-Parent" role="tabpanel" aria-labelledby="v-pills-Parent-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Calls
+                                    </div>
+                                    <div class="card-body">
+                                        <input id="datepicker" value="">
+                                        <div class="stats-container">
+                                            <div class="incomming">
+                                                <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                    <a></a>
+                                                </div>
+                                                <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                    <a></a>
+                                                </div>
+                                            </div>
+                                            <div class="Outgoing">
+                                                <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                    <a></a>
+                                                </div>
+                                                <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                    <a></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Assigned Customers
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers : 100</h5>
+                                        <div class="stats-container">
+                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                <a></a>
+                                            </div>
+                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
+                                                <a></a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Student" role="tabpanel" aria-labelledby="v-pills-Student-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Instructors" role="tabpanel" aria-labelledby="v-pills-Instructors-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Employee" role="tabpanel" aria-labelledby="v-pills-Employee-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Curriculum" role="tabpanel" aria-labelledby="v-pills-Curriculum-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Groups" role="tabpanel" aria-labelledby="v-pills-Groups-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show " id="v-pills-Schedule" role="tabpanel" aria-labelledby="v-pills-Schedule-tab">
+                            <div class="row top-nav" style="padding-right: 90px;">
+                                <ul class="pages-navigation">
+                                    <li class="pages-link active overview">Overview</li>
+                                    <li class="pages-link sessions">All Customers</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class=".col-sm- content-container body">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="/js/circle-progress.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/global.js"></script>
+        <script src="js/dashboard_operation.js"></script>
+        <script src="/Database/admin.js"></script>
+        <script src="/Database/database_functions.js"></script>
+        <script src="/Database/help.js"></script>
+
+
+</body>
+
+</html>

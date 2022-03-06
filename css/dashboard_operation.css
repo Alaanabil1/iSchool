@@ -1,0 +1,64 @@
+#v-pills-Parent .card {
+    width: 315px;
+    border-radius: 12px !important;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#v-pills-Parent .card-header {
+    text-align: center;
+    background-color: #1955CC;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+#v-pills-Parent .card-title {
+    font-size: 13px;
+    text-align: center;
+}
+
+#v-pills-Parent .content-container.body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.circle {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: block;
+}
+
+.circle::after {
+    content: attr(data-name);
+    font-size: 13px;
+    left: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.circle a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 20px;
+}
+
+#datepicker {
+    margin: auto;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    border: transparent;
+    cursor: pointer;
+}

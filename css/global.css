@@ -812,6 +812,25 @@ table th {
     margin-bottom: 15px;
 }
 
+.nav-conatainer .d-flex,
+.nav-conatainer .nav,
+.nav-conatainer button {
+    width: 100% !important;
+}
+
+.tab-content {
+    overflow-x: hidden;
+}
+
+.nav-link {
+    color: #1955CC;
+}
+
+.nav-link.active {
+    background-color: #1955CC !important;
+    border-radius: 0;
+}
+
 @media screen and (max-width: 600px) {
     .nav.nav-pills {
         display: block;
