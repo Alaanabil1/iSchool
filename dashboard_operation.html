@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/dashboard_operation.css">
+    
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard_operation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css">
     <title>Operation Dashboard</title>
 </head>
 
@@ -81,7 +83,7 @@
                                 </div>
                         </ul>
                         <hr>
-                        <div class="join-session"><button class="button-48" role="button"><i style="font-size: 15px;" class="fa-solid fa-gem"></i><span class="text"> Upgrade </span> </button></div>
+                   
                         </div>
                     </div>
                 </div>
@@ -139,160 +141,379 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <!-- Left Nav tabs Expand -->
+                    <!-------------------------->
+                     <!-------------------------->
+                      <!-------------------------->
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-Parent" role="tabpanel" aria-labelledby="v-pills-Parent-tab">
                             <div class="row top-nav" style="padding-right: 90px;">
-                                <ul class="pages-navigation">
-                                    <li class="pages-link active overview">Overview</li>
-                                    <li class="pages-link sessions">All Customers</li>
-                                </ul>
+                                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link active" id="Prent-Overview-tab" data-bs-toggle="pill" data-bs-target="#pills-Prent-Overview" type="button" role="tab" aria-controls="Prent-Overview" aria-selected="true">Overview</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="Parent-Allcustomers-tab" data-bs-toggle="pill" data-bs-target="#pills-Parent-Allcustomers" type="button" role="tab" aria-controls="Parent-Allcustomers" aria-selected="false">All Customers</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="Parent-Addcustomers" data-bs-toggle="pill" data-bs-target="#pills-Parent-Addcustomers" type="button" role="tab" aria-controls="Parent-Addcustomers" aria-selected="false">Add Customer</button>
+                                      </li>
+                                  </ul>
                                 <hr>
                             </div>
-                            <div class=".col-sm- content-container body">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
+                            <div class=".cols-sm-  content-container body">
+                                 <!-- Top Nav tabs Expand -->
+                                <div class="tab-content" id="pills-tabContent">
+
+                                     <!-- Overview Tab -->
+                                    <div class="tab-pane fade show active" id="pills-Prent-Overview" role="tabpanel" aria-labelledby="Prent-Overview-tab">
+                                        <div class="row row-01">
+                                            <!-- Customers
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card assigned-customers">
+                                               <div class="card-header">
+                                                   Assigned Customers
+                                               </div>
+                                               <div class="card-body">
+                                                   <h5 class="card-title">Total Customers : 100</h5>
+                                                   <div class="stats-container">
+                                                       <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="75">
+                                                           <a></a>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+           
+                                           <!-- Calls
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card">
+                                               <div class="card-header">
+                                                   Calls
+                                               </div>
+                                               <div class="card-body">
+                                                   <div class="datecontainer calls" id="sandbox-container">
+                                                       
+                                                       <input 
+                                                       type="text"
+                                                       class="datepicker_input form-control border-2"
+                                                       id="datepicker1"
+                                                       required
+                                                       placeholder="MM/YYYY">
+                                                      
+                                                   </div>
+                                                  
+                                                   <div class="stats-container">
+                                                       <div class="incomming">
+                                                           <h6>Incomming</h6>
+                                                           <h5 class="card-title">Total Calls : 100</h5>
+                                                           <div class="optmizeflex">
+                                                           <div class="smallcircle" id="Inanswerd" data-name="Answerd" data-precent="50">
+                                                               <a></a>
+                                                           </div>
+                                                           <div class="smallcircle" id="Innotanswerd" data-name="Not Answerd" data-precent="50">
+                                                               <a></a>
+                                                           </div>
+                                                       </div>
+                                                       </div>
+                                                       <div class="outgoing">
+                                                           <h6>Outgoing</h6>
+                                                           <h5 class="card-title">Total Calls : 100</h5>
+                                                           <div class="optmizeflex">
+                                                           <div class="smallcircle" id="Outanswerd" data-name="Answerd" data-precent="30">
+                                                               <a></a>
+                                                           </div>
+                                                           <div class="smallcircle" id="Outnotanswerd" data-name="Not Answerd" data-precent="70">
+                                                               <a></a>
+                                                           </div>
+                                                       </div>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+                                           <!-- Survey
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card survey">
+                                               <div class="card-header">
+                                                   Survey
+                                               </div>
+                                               <div class="card-body">
+                                                   <input 
+                                                   type="text"
+                                                   class="datepicker_input form-control border-2"
+                                                   id="datepicker2"
+                                                   required
+                                                   placeholder="MM/YYYY">
+                                               
+                                                   <div class="stats-container">
+                                                     <div class="bar onestar" data-count="20">
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <div class="progress-container">
+                                                           <div class="progress-thumb"></div>
+                                                       </div>
+                                                       <p></p>
+                                                     </div>
+                                                     <div class="bar twostar" data-count="50">
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <div class="progress-container">
+                                                           <div class="progress-thumb"></div>
+                                                       </div>
+                                                       <p></p>
+                                                     </div>
+                                                     <div class="bar threestar" data-count="190">
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <div class="progress-container">
+                                                           <div class="progress-thumb"></div>
+                                                       </div>
+                                                       <p></p>
+                                                     </div>
+                                                     <div class="bar fourstar" data-count="1000">
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star"></i>
+                                                       <div class="progress-container">
+                                                           <div class="progress-thumb"></div>
+                                                       </div>
+                                                       <p></p>
+                                                     </div>
+                                                     <div class="bar fivestar" data-count="1020">
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <i class="fa-solid fa-star blue"></i>
+                                                       <div class="progress-container">
+                                                           <div class="progress-thumb"></div>
+                                                       </div>
+                                                       <p></p>
+                                                     </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+           
+                                       </div>
+                                       <div class="row row-02">
+           
+                                            <!-- Tickets
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card">
+                                               <div class="card-header">
+                                                   Tickets
+                                               </div>
+                                               <div class="card-body">
+                                                   <h5 class="card-title">Total Tickets : 100</h5>
+                                                   <div class="stats-container">
+                                                       <div class="smallcircle" id="activeTickets" data-name="Active" data-precent="25">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="inprogressTickets" data-name="Inprogress" data-precent="20">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="closedTickets" data-name="Closed" data-precent="55">
+                                                           <a></a>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+                                            <!-- Chat
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card">
+                                               <div class="card-header">
+                                                   Chat
+                                               </div>
+                                               <div class="card-body">
+                                                   <h5 class="card-title">Total Messages : 100</h5>
+                                                   <div class="stats-container">
+                                                       <div class="smallcircle" id="allMsgs" data-name="All" data-precent="25">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="pendingMsgs" data-name="Inprogress" data-precent="20">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="doneMsgs" data-name="Closed" data-precent="55">
+                                                           <a></a>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+                                                <!-- Installments
+                                           --------------
+                                           --------------- -->
+                                           </div>
+                                            <!-- Installments
+                                           --------------
+                                           --------------- -->
+           
+                                           <div class="col card">
+                                               <div class="card-header">
+                                                   Installments
+                                               </div>
+                                               <div class="card-body">
+                                                   <h5 class="card-title">Total Installments : 100</h5>
+                                                   <div class="stats-container">
+                                                       <div class="smallcircle" id="pendingDue" data-name="Pending Due" data-precent="25">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="due" data-name="Due" data-precent="20">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="smallcircle" id="deadAR" data-name="Dead AR" data-precent="55">
+                                                           <a></a>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+           
+                                       </div>
+                                       <div class="row row-03">
+                                           
+                                            <!-- upgradation
+                                           --------------
+                                           --------------- -->
+                                           <div class="col card">
+                                               <div class="card-header">
+                                                   Upgradation
+                                               </div>
+                                               <div class="card-body">
+                                                   <div class="datecontainer calls" id="sandbox-container">
+                                                       
+                                                       <input 
+                                                       type="text"
+                                                       class="datepicker_input form-control border-2"
+                                                       id="datepicker1"
+                                                       required
+                                                       placeholder="MM/YYYY">
+                                                      
+                                                   </div>
+                                                   
+                                                   <div class="stats-container">
+                                                       <div class="largecircle" id="renewUp" data-name="Renew" data-precent="25">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="largecircle" id="pedningUp" data-name="Pending" data-precent="30">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="largecircle" id="expiredUp" data-name="Expired" data-precent="35">
+                                                           <a></a>
+                                                       </div>
+                                                       <div class="largecircle" id="outUp" data-name="Out" data-precent="10">
+                                                           <a></a>
+                                                       </div>
+                                                   </div>
+           
+           
+                                               </div>
+           
+                                           </div>
+                                       </div>
                                     </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
+                                    <!-- All customers Tab -->
+                                    <div class="tab-pane fade" id="pills-Parent-Allcustomers" role="tabpanel" aria-labelledby="Parent-Allcustomers-tab">
+                                        <table class="all-customer-table">
 
+                                            <thead>
+                                                <tr>
+                                                    <th class="col" scope="col-1">Parent Information</th>
+                                                    <th class="col" scope="col">Calls Info</th>
+                                                    <th class="col" scope="col">Msgs</th>
+                                                    <th class="col" scope="col">Tickets</th>
+                                                    <th class="col-auto" style="width:9%" scope="col-auto">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="all-customers-item">
+                                                    <td data-label="Parent Information">
+                                                        ID: <a id="ID">2000</a>
+                                                        <br>
+                                                        Name: <a id ="parentName"> Ahmed Mohamed Elsayed Hefny</a>
+                                                        <br>
+                                                        <a id="studentsNum">5 Students</a> <a id="satisfiction">Satisfied</a>
+                                                    </td>
+                                                    <td data-label="Calls Info">
+                                                        Status: <a id="callStatus">Active</a><br>
+                                                        Last Call: <a id="lastCall">20/10/2022 | 7:00AM</a><br>
+                                                        Next Call: <a id="nextCall">20/10/2022 | 7:00AM</a>
+                                                    </td>
+                                                    <td data-label="Msgs"> Status: <a id="msgStatus">Active</a><br>
+                                                        Last Call: <a id="lastMsg">20/10/2022 | 7:00AM</a><br>
+                                                        Next Call: <a id="nextMsg">20/10/2022 | 7:00AM</a></td>
+                                                    <td  data-label="Tickets"> Status: <a id="ticketStatus">Active</a><br>
+                                                        Last Call: <a id="ticketCall">20/10/2022 | 7:00AM</a><br>
+                                                        Next Call: <a id="ticketCall">20/10/2022 | 7:00AM</a></td>
+                                                    <td  data-label="Actions">
+                                                        <div class="actions-icons">
+                                                            <i class="fa-solid fa-message gray"></i>
+                                                            <i class="fa-solid fa-circle-info gray"></i>
+                                                            <i class="fa-solid fa-square-phone gray"></i>
+                                                            <i class="fa-solid fa-circle-exclamation red"></i>
+                                                            <i class="fa-solid fa-coins gray"></i>
 
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                        
+                                            </tbody>
+                                        </table>
+                                          <a class="btn btn-primary" data-bs-toggle="modal" href="#ParentinfoPop" role="button">Open first modal</a>
+                                        <nav aria-label="...">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item" aria-current="page">
+                                                    <a class="page-link" href="#">2</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
                                     </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Calls
-                                    </div>
-                                    <div class="card-body">
-                                        <input id="datepicker" value="">
-                                        <div class="stats-container">
-                                            <div class="incomming">
-                                                <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                    <a></a>
-                                                </div>
-                                                <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                    <a></a>
-                                                </div>
-                                            </div>
-                                            <div class="Outgoing">
-                                                <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                    <a></a>
-                                                </div>
-                                                <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                    <a></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Assigned Customers
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Total Customers : 100</h5>
-                                        <div class="stats-container">
-                                            <div class="circle" id="satisfiedCustomers" data-name="Satisfied" data-precent="25">
-                                                <a></a>
-                                            </div>
-                                            <div class="circle" id="notsatisfiedCustomers" data-name="Not Satisfied" data-precent="90">
-                                                <a></a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-
+                                    <!-- Add customers Tab-->
+                                    <div class="tab-pane fade" id="pills-Parent-Addcustomers" role="tabpanel" aria-labelledby="Parent-Addcustomers">add</div>
+                                  </div>
+                         <!-- End Top Nav tabs Expand -->
 
                             </div>
                         </div>
@@ -375,7 +596,299 @@
                             </div>
                         </div>
                     </div>
+                    <!--  END Left Nav tabs Expand -->
+                    <!-------------------------->
+                     <!-------------------------->
 
+
+
+
+
+
+
+
+
+
+
+                     <!-- popups -->
+                     <!-------------------------------------------------------------------------------------------------------------->
+                     <!-------------------------------------------------------------------------------------------------------------->
+                     <!-------------------------------------------------------------------------------------------------------------->
+
+                     <!-- Parent Information Popup -->
+                     <div class="modal fade" id="ParentinfoPop" aria-hidden="true" aria-labelledby="praentinfoTitle" tabindex="-1">
+                        <div class="modal-xl modal-dialog modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="praentinfoTitle">Parent ID : 2000</h5>
+                              <div class="actions">
+                                <i class="fa-solid fa-square-phone gray"></i>
+                                <i class="fa-solid fa-message gray"></i>
+                              </div>
+                             
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Primary Contact</h5>
+                                <hr>
+                                <div class="contact row row-cols-3">
+                                    <span >
+                                        Name: <a>Ahmed Mohamed Sayed</a>
+                                    </span>
+                                    <span>
+                                        Job: <a>Teacher</a>
+                                    </span>
+                                    <span>
+                                        Phone: <a>011999898899</a>
+                                    </span>
+                                    <span>
+                                        Email: <a>Ahmed.nabil.sayed@gmail.com</a>
+                                    </span>
+                                </div>
+
+                                <h5>Secondery Contact</h5>
+                                <hr>
+                                <div class="contact row row-cols-3">
+                                    <span >
+                                        Name: <a>Ahmed Mohamed Sayed</a>
+                                    </span>
+                                    <span>
+                                        Job: <a>Teacher</a>
+                                    </span>
+                                    <span>
+                                        Phone: <a>011999898899</a>
+                                    </span>
+                                    <span>
+                                        Email: <a>Ahmed.nabil.sayed@gmail.com</a>
+                                    </span>
+                                </div>
+                                <h5>General Information</h5>
+                                <hr>
+                                <div class="contact row row-cols-3">
+                                    <span >
+                                        Address: <a>South of academy fifth settlement, villa 271 , Egypt</a>
+                                    </span>
+                                    <span>
+                                        Location: <a>Egypt</a>
+                                    </span>
+                                    <span>
+                                        Register Status: <a>Active</a>
+                                    </span>
+                                    <span>
+                                        Customer Support Agent: <a>Mohamed</a>
+                                    </span>
+                                    <span>
+                                        Sales Agent: <a>Ahmed</a>
+                                    </span>
+                                    <span>
+                                        Students Num: <a>3</a>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+
+                              <button class="btn btn-primary" data-bs-target="#StudentinfoPop" data-bs-toggle="modal" data-bs-dismiss="modal">Students info</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <!-- Student Information Popup -->
+                      <div class="modal fade" id="StudentinfoPop" aria-hidden="true" aria-labelledby="studentInfotitle" tabindex="-1">
+                        <div class="modal-xl modal-dialog modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn" data-bs-target="#ParentinfoPop" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                              <h5 class="modal-title" id="studentInfotitle">Parent ID : <a>2000</a></h5>
+                              <h5 style="margin-left: 30px;" class="modal-title" id="studentInfotitle">Parent Name : <a>Ahmed Mohamed Ali</a></h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="parent-students-table">
+
+                                    <thead>
+                                        <tr>
+                                            <th class="col" scope="col-1">Students Info</th>
+                                            <th class="col" scope="col">Group Info</th>
+                                            <th class="col" scope="col">Package Info</th>
+                                            <th class="col" scope="col">Sessions Info</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="parent-students-item">
+                                            <td data-label="Students Info">
+                                                ID: <a id="ID">2000</a>
+                                                <br>
+                                                iSchool ID: <a id ="iSchoolID"> 1000</a>
+                                                <br>
+                                                Student Name: <a id="studentName">Hesham Mohamed</a>
+                                                <br>
+                                                Status: <a id="studentStatus">Active</a>
+                                                <br>
+                                                Age: <a id="studentAge">8 Years</a>
+                                                <br>
+                                                Free Session: <a id="Freesession"><i class="fa-solid fa-square-check green"></i></a>
+                                            </td>
+                                            <td data-label="Group Info">
+                                                ID: <a id="groupID">55</a>
+                                                <br>
+                                                Slot: <a id ="groupSlot"> 2:00 - 3:00</a>
+                                                <br>
+                                                Lang: <a id="groupLang">English</a>
+                                                <br>
+                                                Attend: <a id="groupAttend">Online</a>
+                                                <br>
+                                                Level: <a id="groupLevel">Fo1</a>
+                                                <br>
+                                                Status: <a id="groupStatus">Active</a>
+                                                <br>
+                                                Day: <a id="groupDay">Sunday</a>
+                                                <br>
+                                                Age Range: <a id="groupAgerange">C</a>
+                                            </td>
+                                            <td data-label="Package Info">
+                                                ID: <a id="packageID">55</a>
+                                                <br>
+                                                Package: <a id ="pagckageNum">1</a>
+                                                <br>
+                                                Name: <a id="packageName">Annual</a>
+                                                <br>
+                                                Quota: <a id="packageQuota">Online</a>
+                                                <br>
+                                                Fees: <a id="packageFees">19900</a>
+                                                <br>
+                                                Discount: <a id="packageDiscount">0</a>
+                                                <br>
+                                                Paid As: <a id="packagePaid">5370</a>
+                                               
+                                            </td>
+                                            <td class="last" data-label="Sessions Info"> 
+                                                Created Sessions: <a id="sessionCreated">1</a>
+                                                <br>
+                                                Completed Sessions: <a id ="sessionCompeleted">1</a>
+                                                <br>
+                                                Attend Sessions: <a id="sessionAttend">1</a>
+                                                <br>
+                                                Absent Sessions: <a id="sessionAbsent">0</a>
+                                                <br>
+                                                Feedbacks: <a id="sessionsFeedback">2</a>
+                                                <button type="button" class="btn" data-bs-target="#StudentprofilePop" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                                    <i class="fa-solid fa-eye blue"></i>
+                                                </button>
+                                            </td>
+                                           
+                                        </tr>
+                                        <tr class="parent-students-item">
+                                            <td data-label="Students Info">
+                                                ID: <a id="ID">2000</a>
+                                                <br>
+                                                iSchool ID: <a id ="iSchoolID"> 1000</a>
+                                                <br>
+                                                Student Name: <a id="studentName">Hesham Mohamed</a>
+                                                <br>
+                                                Status: <a id="studentStatus">Active</a>
+                                                <br>
+                                                Age: <a id="studentAge">8 Years</a>
+                                                <br>
+                                                Free Session: <a id="Freesession"><i class="fa-solid fa-square-check green"></i></a>
+                                            </td>
+                                            <td data-label="Group Info">
+                                                ID: <a id="groupID">55</a>
+                                                <br>
+                                                Slot: <a id ="groupSlot"> 2:00 - 3:00</a>
+                                                <br>
+                                                Lang: <a id="groupLang">English</a>
+                                                <br>
+                                                Attend: <a id="groupAttend">Online</a>
+                                                <br>
+                                                Level: <a id="groupLevel">Fo1</a>
+                                                <br>
+                                                Status: <a id="groupStatus">Active</a>
+                                                <br>
+                                                Day: <a id="groupDay">Sunday</a>
+                                                <br>
+                                                Age Range: <a id="groupAgerange">C</a>
+                                            </td>
+                                            <td data-label="Package Info">
+                                                ID: <a id="packageID">55</a>
+                                                <br>
+                                                Package: <a id ="pagckageNum">1</a>
+                                                <br>
+                                                Name: <a id="packageName">Annual</a>
+                                                <br>
+                                                Quota: <a id="packageQuota">Online</a>
+                                                <br>
+                                                Fees: <a id="packageFees">19900</a>
+                                                <br>
+                                                Discount: <a id="packageDiscount">0</a>
+                                                <br>
+                                                Paid As: <a id="packagePaid">5370</a>
+                                               
+                                            </td>
+                                            <td class="last" data-label="Sessions Info"> 
+                                                Created Sessions: <a id="sessionCreated">1</a>
+                                                <br>
+                                                Completed Sessions: <a id ="sessionCompeleted">1</a>
+                                                <br>
+                                                Attend Sessions: <a id="sessionAttend">1</a>
+                                                <br>
+                                                Absent Sessions: <a id="sessionAbsent">0</a>
+                                                <br>
+                                                Feedbacks: <a id="sessionsFeedback">2</a>
+                                                <button type="button" class="btn" data-bs-target="#StudentprofilePop" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                                    <i class="fa-solid fa-eye blue"></i>
+                                                </button>
+                                            </td>
+                                           
+                                        </tr>
+                                
+                                    </tbody>
+                                </table>
+                            </div>
+                         
+                          </div>
+                        </div>
+                      </div>
+
+
+                         <!-- Student Profile Popup -->
+                         <div class="modal fade" id="StudentprofilePop" aria-hidden="true" aria-labelledby="studentInfotitle" tabindex="-1">
+                            <div class="modal-xl modal-dialog modal-dialog-scrollable">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn" data-bs-target="#StudentinfoPop" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
+                                  <h5 class="modal-title" id="studentInfotitle" style="text-align: center;">Student Profile</h5>
+                                 
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-body">
+                                          <div class="row row-cols-2">
+                                            <span>Student Name : <a>Student Name Here</a></span>
+                                            <span>Total Modules : <a>05</a></span>
+                                            <span>Age Range : <a> 06 - 08 Years</a></span>
+                                            <span>Total Sessions : <a>05</a></span>
+                                            <span>Module Name : <a>Module Name</a></span>
+                                            <span>Instructor Name : <a>Mohamed Sayed</a></span>
+                                            <span>Status : <a>Running</a></span>
+                                            <span>Current Session : <a>02</a></span>
+                                          </div>
+                                      
+                                        </div>
+                                      </div>
+                                </div>
+                             
+                              </div>
+                            </div>
+                          </div>
                 </div>
             </div>
         </div>
@@ -385,14 +898,18 @@
         <script src="/js/circle-progress.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/popper.min.js"></script>
+   
         <script src="js/global.js"></script>
-        <script src="js/dashboard_operation.js"></script>
+        <script type="module" src="js/dashboard_operation.js"></script>
         <script src="/Database/admin.js"></script>
         <script src="/Database/database_functions.js"></script>
         <script src="/Database/help.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+
 
 
 </body>
 
 </html>
+
+

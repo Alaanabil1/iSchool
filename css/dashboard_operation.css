@@ -1,64 +1,295 @@
 #v-pills-Parent .card {
-    width: 315px;
-    border-radius: 12px !important;
-    margin-top: 20px;
-    margin-right: 20px;
+  width: auto;
+  border-radius: 12px !important;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 #v-pills-Parent .card-header {
-    text-align: center;
-    background-color: #1955CC;
-    color: white;
-    border-radius: 12px 12px 0 0;
+  text-align: center;
+  background-color: #1955cc;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  padding: 10px 20px;
 }
 
 #v-pills-Parent .card-title {
-    font-size: 13px;
-    text-align: center;
+  font-size: 13px;
+  text-align: center;
 }
+.assigned-customers .card-title {
+  margin-bottom: 30px;
+}
+#v-pills-Parent .card .card-body {
+  display: flex;
+  flex-direction: column;
 
+  height: auto;
+  position: relative;
+}
+.content-container.body {
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+}
 #v-pills-Parent .content-container.body {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .stats-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .circle {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    display: block;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 10px;
 }
 
 .circle::after {
-    content: attr(data-name);
-    font-size: 13px;
-    left: 0;
-    bottom: 0;
-    display: block;
-    margin: auto;
-    width: 100%;
-    text-align: center;
+  content: attr(data-name);
+  font-size: 13px;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .circle a {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 20px;
 }
 
-#datepicker {
-    margin: auto;
-    display: block;
-    margin-bottom: 15px;
-    text-align: center;
-    border: transparent;
-    cursor: pointer;
+.smallcircle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 10px;
+}
+
+.smallcircle::after {
+  content: attr(data-name);
+  font-size: 10px;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.smallcircle a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 15px;
+}
+
+.largecircle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 10px;
+}
+
+.largecircle::after {
+  content: attr(data-name);
+  font-size: 15px;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.largecircle a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 30px;
+}
+.calls .datepicker_input {
+  margin-bottom: 5px;
+}
+.datecontainer {
+  display: flex;
+  padding-bottom: 10px;
+}
+.datecontainer input {
+  text-align: center;
+}
+.datecontainer .fa-left-long,
+.datecontainer .fa-right-long {
+  cursor: pointer;
+}
+#v-pills-Parent .outgoing,
+#v-pills-Parent .incomming {
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  margin: 0 5px;
+  padding-bottom: 30px;
+}
+#v-pills-Parent .outgoing h6,
+#v-pills-Parent .incomming h6 {
+  text-align: center;
+  margin-top: 10px;
+}
+#v-pills-Parent .optmizeflex {
+  display: flex;
+}
+.card.survey .bar {
+  display: flex;
+}
+.card.survey input {
+  margin-bottom: 10px;
+}
+.bar .progress-container {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+  width: 150px;
+  height: 15px;
+  margin: 5px 10px;
+  position: relative;
+  overflow: hidden;
+}
+.bar .progress-container .progress-thumb {
+  background-color: #1955cc;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+}
+.gray,
+.fa-star {
+  color: #d3d3d3;
+  transition: 300ms;
+  cursor: pointer;
+}
+.red {
+  color: #ff010150;
+  transition: 300ms;
+  cursor: pointer;
+}
+.fa-star.blue {
+  color: #1955cc;
+}
+.card.survey .stats-container {
+  flex-direction: column;
+}
+.row-01,
+.row-02,
+.row-03 {
+  width: 100%;
+  --bs-gutter-x: 0;
+  margin: 0;
+}
+.nav-item .nav-link {
+  box-shadow: none;
+  height: auto !important;
+  border: none;
+}
+.nav-item .nav-link.active {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none;
+  height: auto !important;
+  position: relative;
+  border: none;
+}
+.nav-item .nav-link.active::after {
+  content: "";
+  width: 100%;
+  background-color: #1955cc;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.tab-content {
+  width: 100%;
+}
+.all-customer-table th,
+.all-customer-table td {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+.all-customer-table tbody tr:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+.all-customer-table td #satisfiction {
+  float: right;
+  display: inline;
+}
+.actions-icons {
+  text-align: right;
+  font-size: 18px;
+}
+.gray:hover {
+  color: gray;
+}
+.red:hover {
+  color: #ff0101;
+}
+.green {
+  color: green;
+}
+.modal-body .contact {
+  margin-bottom: 30px;
+}
+.modal-body .contact span {
+  margin-bottom: 20px;
+  color: #2c2c2c70;
+}
+.modal-body .contact span a {
+  color: #2c2c2c;
+}
+.modal-xl .modal-body {
+  padding: 30px 30px;
+}
+.modal-header .actions {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.parent-students-table th,
+.parent-students-table td {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+.parent-students-table tbody tr:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+.parent-students-table td.last {
+  position: relative;
+}
+.blue {
+  color: #1955cc;
+}
+.parent-students-table td.last button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
